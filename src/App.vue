@@ -1,16 +1,10 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
+import HeaderComponent from './components/HeaderComponent.vue';
 </script>
 
 <template>
-  <header>
-    Test App
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-  </header>
-
+  <HeaderComponent />
   <RouterView />
 </template>
 

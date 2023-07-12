@@ -5,4 +5,10 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-color: lighten($neutral, 15%);
+}
+
+.classic-container {
+    max-width: $classic-ctn;
+    margin: 0 auto;
 }
