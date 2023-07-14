@@ -1,11 +1,15 @@
 <script lang="ts" setup>
     import { ref } from 'vue';
     import { Bars3Icon, EnvelopeIcon } from '@heroicons/vue/24/outline';
+    import type { navlink } from "@/interfaces/navlinks.interface";
+    import { useNavLinksStore } from '@/stores/navlinks';
 
     const showNav = ref<boolean>(false);
     const toggleNav = (): void => {
         showNav.value = !showNav.value;
     }
+
+    const navlinks: navlink[] = useNavLinksStore().navlinks;
 </script>
 
 <template>
@@ -14,7 +18,9 @@
             <div class="navmenu-container">
                 <button type="button" class="nav-button __toggle" @click="toggleNav"><Bars3Icon class="nav-icon __toggle" /></button>
                 <ol class="navmenu" v-if="showNav">
-                    <li class="navitem">Menu de navigation</li>
+                    <li class="navitem" v-for="(navlink, index) of navlinks" :key="index">
+                        <RouterLink class="navlink" :to="navlink.path" :name="navlink.name">{{ navlink.name }}</RouterLink>
+                    </li>
                 </ol>
             </div>
             <RouterLink to="/contact" class="nav-button __contact">
@@ -65,6 +71,49 @@
             background-color: $primary;
             .nav-icon {
                 color: $light;
+            }
+        }
+    }
+
+    .navmenu {
+        box-sizing: border-box;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: 160px;
+        padding: 0;
+        background-color: $primary;
+        border: 1px solid transparent;
+        border-radius: $radius-s;
+        color: $light;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        z-index: 1;
+
+        .navitem {
+            box-sizing: border-box;
+            width: 100%;
+            height: 60px;
+            padding: $space-s $space-m;
+            margin: 0;
+            transition: all 200ms ease-in;
+
+            .navlink {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: $light;
+                cursor: pointer;
+            }
+
+            &:hover, &:focus {
+                background-color: $light;
+                .navlink {
+                    color: $primary;
+                }
             }
         }
     }
