@@ -23,7 +23,7 @@
         box-sizing: border-box;
         max-height: 140px;
         padding: $space-s;
-        border-bottom: 4px double $primary;
+        border-bottom: 5px double $primary;
     }
 
     .header-container {
@@ -53,14 +53,14 @@
 
     .navbar-component {
         flex: 1;
-        @media (min-width: $bp-m) {
+        @media (min-width: $bp-l) {
             display: none;
         }
     }
 
     .navbar-desktop-component {
         display: none;
-        @media (min-width: $bp-m) {
+        @media (min-width: $bp-l) {
             display: flex;
             flex: 3;
         }
