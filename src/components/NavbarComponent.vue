@@ -25,7 +25,7 @@
             </div>
             <RouterLink to="/contact" class="nav-button __contact">
                 <EnvelopeIcon class="nav-icon __user" />
-            <BeakerIcon class="nav-icon" /></RouterLink>
+            </RouterLink>
         </nav>
     </div>
 </template>
@@ -56,21 +56,36 @@
         background-color: transparent;
         color: $primary;
         border-radius: $radius-s;
-        border: 1px solid $primary;
+        border: 2px solid $primary;
         padding: $space-s;
         transition: all 200ms ease-in;
-
+        
         .nav-icon {
             cursor: pointer;
             height: 1.5rem;
             width: auto;
             color: $primary;
         }
-
+        
         &:hover, &:focus {
             background-color: $primary;
             .nav-icon {
                 color: $light;
+            }
+        }
+        
+        &.__contact {
+            color: $secondary;
+            border: 2px solid $secondary;
+
+            .nav-icon {
+                color: $secondary;
+            }
+            &:hover, &:focus {
+                background-color: $secondary;
+                .nav-icon {
+                    color: $light;
+                }
             }
         }
     }

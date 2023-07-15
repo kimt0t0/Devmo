@@ -1,5 +1,6 @@
 <script lang="ts" setup>
     import NavbarComponent from './NavbarComponent.vue';
+    import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
 </script>
 
 <template>
@@ -9,7 +10,8 @@
                 <h1 class="header-title">DEvMO</h1>
                 <p class="header-subtitle">by kimro</p>
             </div>
-            <NavbarComponent class="navbar-component" /> 
+            <NavbarComponent class="navbar-component" />
+            <NavbarDesktopComponent class="navbar-desktop-component" />
         </div>
     </header>
 </template>
@@ -51,5 +53,16 @@
 
     .navbar-component {
         flex: 1;
+        @media (min-width: $bp-m) {
+            display: none;
+        }
+    }
+
+    .navbar-desktop-component {
+        display: none;
+        @media (min-width: $bp-m) {
+            display: flex;
+            flex: 3;
+        }
     }
 </style>

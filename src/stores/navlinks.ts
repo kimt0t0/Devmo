@@ -11,10 +11,6 @@ export const useNavLinksStore = defineStore('navlinks', () => {
         {
             name: 'A propos',
             path: '/a-propos'
-        },
-        {
-            name: 'Contact',
-            path: '/contact'
         }
     ]);
 
