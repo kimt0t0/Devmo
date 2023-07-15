@@ -13,9 +13,9 @@ import FooterComponent from './components/FooterComponent.vue';
 </template>
 
 <style>
-@import './styles/theme.scss';
+  @import '@/styles/theme.scss';
 
-.main {
-  min-height: 800px;
-}
+  .main {
+    min-height: 800px;
+  }
 </style>

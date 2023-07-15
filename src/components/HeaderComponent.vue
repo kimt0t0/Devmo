@@ -21,7 +21,7 @@
 
     .header {
         box-sizing: border-box;
-        max-height: 140px;
+        min-height: 140px;
         padding: $space-s;
         border-bottom: 5px double $primary;
     }
@@ -44,6 +44,7 @@
             line-height: 1.5;
             margin: 0;
             font-weight: 800;
+            font-size: $txt-l;
         }
         .header-subtitle {
             line-height: 1;

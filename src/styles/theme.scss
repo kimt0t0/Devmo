@@ -12,5 +12,6 @@ html, body {
 
 .classic-container {
     max-width: $classic-ctn;
+    padding: $space-l $space-m;
     margin: 0 auto;
 }
