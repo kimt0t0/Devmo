@@ -64,7 +64,7 @@
     }
 
     .hero-subtitle {
-        font-size: $txt-m;
+        font-size: $txt-s;
         color: $primary;
         margin: 0;
         &.__secondary {

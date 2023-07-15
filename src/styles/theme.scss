@@ -10,6 +10,10 @@ html, body {
     font-size: 20px;
 }
 
+.classic-section {
+    padding: $space-m 0;
+}
+
 .classic-container {
     max-width: $classic-ctn;
     padding: $space-l $space-m;
