@@ -5,12 +5,12 @@ import type { navlink } from "@/interfaces/navlinks.interface";
 export const useNavLinksStore = defineStore('navlinks', () => {
     const navlinks = ref<navlink[]>([
         {
-            name: 'Accueil',
+            name: 'Home',
             path: '/'
         },
         {
-            name: 'A propos',
-            path: '/a-propos'
+            name: 'About',
+            path: '/about'
         }
     ]);
 

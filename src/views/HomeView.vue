@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import HeroParticle from '@/particles/HeroParticle.vue';
   import SkillsComponent from '@/components/homepage/SkillsComponent.vue';
 </script>
 

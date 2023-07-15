@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import SectionTitleParticle from '@/particles/SectionTitleParticle.vue';
+    import CtasComponent from '@/components/CtasComponent.vue';
     import { AcademicCapIcon } from '@heroicons/vue/24/outline';
 </script>
 
@@ -36,6 +36,7 @@
                     <p class="ability-item __coworking __main __19">TOEIC 20/20</p>
                 </article>
             </div>
+            <CtasComponent />
         </div>
     </section>
 </template>
