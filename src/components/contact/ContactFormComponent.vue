@@ -1,16 +1,32 @@
 <script lang="ts" setup>
-    import { ref } from 'vue';
+    import { onMounted, ref } from 'vue';
     import type { ContactForm } from '@/interfaces/ContactForm.interface';
 
-    const devmail: string = 'kimrobert.nb@gmail.com';
+    const isFormValid = ref<boolean>(false);
+    let devmail: string = 'kimrobdev44@gmail.com';
 
     const formData = ref<ContactForm>({
         firstName: '',
         lastName: '',
         email: '',
         topic: '',
-        message: ''
+        message: '',
+        honey: undefined
     });
+
+    const validateFormData = ():void => {
+        let fname = validateFirstName();
+        let lname = validateLastName();
+        let email = validateEmail();
+        let topic = validateTopic();
+        let message = validateMessage();
+        let honey = validateHoney();
+
+        if (fname === true && lname === true && email === true && topic === true && message === true && honey === true) {
+             isFormValid.value = true;
+        } else isFormValid.value = false;
+    }
+
 </script>
 
 <template>
@@ -18,6 +34,7 @@
         <div class="classic-container">
 
             <form class="contact-form">
+                {{  devmail }}
 
                 <div class="cf-line">
                     <div class="cf-group">
@@ -51,9 +68,17 @@
                     </div>
                 </div>
 
-                <div class="cf-mail-container">
+                <div class="cf-line __honey">
+                    <div class="cf-group__honey">
+                        <label class="cf-label__honey" for="honey">Are you honey ?</label>
+                        <input type="text" class="cf-input __honey" v-model="formData.honey" name="honey" placeholder="Write your reply here" />
+                    </div>
+                </div>
+
+                <div class="cf-mail-container" v-if="!formData.honey">
                     <a 
                     :href="'mailto:' + devmail + '?subject=' + formData.topic + '&body=' + formData.email + '%20' + formData.lastName.toUpperCase() + '%20' + formData.firstName + '%20___' + formData.message"
+                    target="_blank"
                     title="Send your email to the website's owner" 
                     class="cf-mail">
                     Send e-mail
@@ -64,3 +89,9 @@
         </div>
     </section>
 </template>
+
+<style lang="scss">
+    .__honey {
+        opacity: 0;
+    }
+</style>
