@@ -1,9 +1,9 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
-import type { navlink } from "@/interfaces/navlinks.interface";
+import type { NavLink } from "@/interfaces/NavLink.interface";
 
 export const useNavLinksStore = defineStore('navlinks', () => {
-    const navlinks = ref<navlink[]>([
+    const navlinks = ref<NavLink[]>([
         {
             name: 'Home',
             path: '/'

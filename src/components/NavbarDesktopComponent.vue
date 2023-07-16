@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-    import type { navlink } from "@/interfaces/navlinks.interface";
+    import type { NavLink } from "@/interfaces/NavLink.interface";
     import { EnvelopeIcon } from '@heroicons/vue/24/outline';
     import { useNavLinksStore } from '@/stores/navlinks';
 
-    const navlinks: navlink[] = useNavLinksStore().navlinks;
+    const navlinks: NavLink[] = useNavLinksStore().navlinks;
 </script>
 
 <template>
@@ -56,4 +56,4 @@
             }
         }
     }
-</style>
+</style>@/interfaces/NavLinks.interface@/interfaces/NavLink.interface

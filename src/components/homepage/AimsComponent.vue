@@ -27,7 +27,7 @@
             </div>
             <div class="aims-container">
                 <h4 class="title-fourth">Aimed Degree:</h4>
-                <p class="aims-txt"><AcademicCapIcon class="icon-classic" />Full-Stack Developer MBA at <a href='' target='' class='classic-link'>@MyDigitalSchool Nantes</a>.</p>
+                <p class="aims-txt"><AcademicCapIcon class="icon-classic" />Full-Stack Developer MBA at <a href='' target='' class='secondary-link'>@MyDigitalSchool Nantes</a>.</p>
                 <p class="aims-txt __lighter">(Or other equivalent degree)</p>
             </div>
         </div>

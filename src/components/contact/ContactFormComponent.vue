@@ -1,0 +1,66 @@
+<script lang="ts" setup>
+    import { ref } from 'vue';
+    import type { ContactForm } from '@/interfaces/ContactForm.interface';
+
+    const devmail: string = 'kimrobert.nb@gmail.com';
+
+    const formData = ref<ContactForm>({
+        firstName: '',
+        lastName: '',
+        email: '',
+        topic: '',
+        message: ''
+    });
+</script>
+
+<template>
+    <section class="classic-section contact-section">
+        <div class="classic-container">
+
+            <form class="contact-form">
+
+                <div class="cf-line">
+                    <div class="cf-group">
+                        <label class="cf-label" for="first-name">First Name :</label>
+                        <input type="text" v-model="formData.firstName" id="first-name" name="first-name" placeholder="Mathieu" />
+                    </div>
+                    <div class="cf-group">
+                        <label class="cf-label" for="last-name">Last Name :</label>
+                        <input type="text" v-model="formData.lastName" id="last-name" name="last-name" placeholder="Nebra" />
+                    </div>
+                </div>
+
+                <div class="cf-line">
+                    <div class="cf-group">
+                        <label class="cf-label" for="email">Email :</label>
+                        <input type="text" v-model="formData.email" id="email" name="email" placeholder="matneb@zero.fr" />
+                    </div>
+                </div>
+
+                <div class="cf-line">
+                    <div class="cf-group">
+                        <label class="cf-label" for="topic">Topic :</label>
+                        <input type="text" v-model="formData.topic" id="topic" name="topic" placeholder="Job proposal" />
+                    </div>
+                </div>
+
+                <div class="cf-line">
+                    <div class="cf-group">
+                        <label class="cf-label" for="message">Message :</label>
+                        <textarea class="cf-textarea" v-model="formData.message" placeholder="Write your message here"></textarea>
+                    </div>
+                </div>
+
+                <div class="cf-mail-container">
+                    <a 
+                    :href="'mailto:' + devmail + '?subject=' + formData.topic + '&body=' + formData.email + '%20' + formData.lastName.toUpperCase() + '%20' + formData.firstName + '%20___' + formData.message"
+                    title="Send your email to the website's owner" 
+                    class="cf-mail">
+                    Send e-mail
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</template>

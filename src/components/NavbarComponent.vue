@@ -1,7 +1,7 @@
 <script lang="ts" setup>
     import { ref } from 'vue';
     import { Bars3Icon, EnvelopeIcon } from '@heroicons/vue/24/outline';
-    import type { navlink } from "@/interfaces/navlinks.interface";
+    import type { NavLink } from "@/interfaces/NavLink.interface";
     import { useNavLinksStore } from '@/stores/navlinks';
 
     const showNav = ref<boolean>(false);
@@ -9,7 +9,7 @@
         showNav.value = !showNav.value;
     }
 
-    const navlinks: navlink[] = useNavLinksStore().navlinks;
+    const navlinks: NavLink[] = useNavLinksStore().navlinks;
 </script>
 
 <template>
