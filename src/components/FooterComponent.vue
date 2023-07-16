@@ -18,7 +18,7 @@
     
     .footer {
         box-sizing: border-box;
-        border-top: 5px double lighten($dark, 10%);
+        border-top: 5px double $dark;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -33,7 +33,7 @@
     }
 
     .footer-txt {
-        color: lighten($dark, 10%);
+        color: $dark;
         font-size: $txt-xs;
         font-weight: 400;
         line-height: 1.2;

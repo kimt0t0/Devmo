@@ -63,9 +63,12 @@
         }
 
         &.__larger {
-            width: 250px;
+            width: 100%;
             height: 250px;
             font-size: $txt-l;
+            @media (min-width: $bp-s) {
+                width: 250px;
+            }
         }
     }
 </style>

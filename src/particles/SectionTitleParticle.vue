@@ -18,5 +18,8 @@
         font-size: $txt-xl;
         font-weight: 600;
         color: $primary;
+        &.__secondary {
+            color: $secondary;
+        }
     }
 </style>

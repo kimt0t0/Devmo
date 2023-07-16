@@ -8,6 +8,7 @@ html, body {
     background-color: lighten($neutral, 15%);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+    color: $primary;
 }
 
 .classic-section {
@@ -18,4 +19,43 @@ html, body {
     max-width: $classic-ctn;
     padding: $space-l $space-m;
     margin: 0 auto;
+}
+
+.hero-title-icon {
+    width: $txt-xl;
+    height: $txt-xl;
+    color: $primary;
+    margin-right: $space-s;
+    &.__secondary {
+        color: $secondary;
+    }
+}
+
+.icon-classic {
+    width: $txt-s;
+    height: $txt-s;
+    color: $primary;
+    margin-right: $space-s;
+}
+
+.title-ter {
+    font-size: $txt-l;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.classic-link {
+    color: $primary;
+    transition: all 200ms ease-in;
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+
+.secondary-link {
+    color: $secondary;
+    transition: all 200ms ease-in;
+    &:hover, &:focus {
+        text-decoration: none;
+    }
 }

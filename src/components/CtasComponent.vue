@@ -1,6 +1,6 @@
 <template>
     <section class="classic-section ctas-section">
-        <SectionTitleParticle title="Get more about..." />
+        <SectionTitleParticle title="Want to know more ?" />
         <div class="ctas-container">
             <ButtonLinkParticle class="cta-button" path="/training" name="my training" color="primary" size="larger" />
             <ButtonLinkParticle class="cta-button" path="/commitments" name="my commitments" color="primary" size="larger" />
@@ -17,8 +17,15 @@
     }
 
     .ctas-container {
+        width: 100%;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        @media (min-width: $bp-s) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
         .cta-button {
             margin: $space-xs $space-s $space-xs 0;
             @media (min-width: $bp-l) {

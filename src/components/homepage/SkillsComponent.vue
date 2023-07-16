@@ -7,7 +7,7 @@
     <section class="classic-section skills-section">
         <div class="classic-container">
             <div class="skills-title-container">
-                <AcademicCapIcon class="skills-title-icon" /><SectionTitleParticle title="My Skills" />
+                <AcademicCapIcon class="hero-title-icon" /><SectionTitleParticle title="My Skills" />
             </div>
             <div class="skills-container">
                 <article class="ability-box __dev">
@@ -47,12 +47,6 @@
     .skills-title-container {
         display: flex;
         align-items: center;
-        .skills-title-icon {
-            width: $txt-xl;
-            height: $txt-xl;
-            color: $primary;
-            margin-right: $space-s;
-        }
     }
     .skills-container {
         background-color: $light;
@@ -61,6 +55,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 80px;
     }
 
     .ability-box {
