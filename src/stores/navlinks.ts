@@ -11,6 +11,10 @@ export const useNavLinksStore = defineStore('navlinks', () => {
         {
             name: 'About',
             path: '/about'
+        },
+        {
+            name: 'My Training',
+            path: '/training'
         }
     ]);
 
