@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
+import { EnvelopeIcon } from '@heroicons/vue/24/outline';
 import type { ContactForm } from '@/interfaces/ContactForm.interface';
 import { useValidators } from '@/composables/formValidators';
 
@@ -40,9 +41,8 @@ const validateFormData = ():void => {
 
 <template>
     <section class="classic-section contact-section">
-        <div class="classic-container">
+        <div class="classic-container contact-container">
             <form class="contact-form">
-                {{ devmail }}
 
                 <div class="cf-line">
                     <div class="cf-group">
@@ -50,6 +50,7 @@ const validateFormData = ():void => {
                         <input
                             type="text"
                             v-model="formData.firstName"
+                            class="cf-input"
                             id="first-name"
                             name="first-name"
                             placeholder="Mathieu"
@@ -60,6 +61,7 @@ const validateFormData = ():void => {
                         <input
                             type="text"
                             v-model="formData.lastName"
+                            class="cf-input"
                             id="last-name"
                             name="last-name"
                             placeholder="Nebra"
@@ -73,6 +75,7 @@ const validateFormData = ():void => {
                         <input
                             type="text"
                             v-model="formData.email"
+                            class="cf-input"
                             id="email"
                             name="email"
                             placeholder="matneb@zero.fr"
@@ -86,6 +89,7 @@ const validateFormData = ():void => {
                         <input
                             type="text"
                             v-model="formData.topic"
+                            class="cf-input"
                             id="topic"
                             name="topic"
                             placeholder="Job proposal"
@@ -117,7 +121,7 @@ const validateFormData = ():void => {
                     </div>
                 </div>
 
-                <div class="cf-mail-container" v-if="!formData.honey">
+                <div class="cf-button-container" v-if="!formData.honey">
                     <a
                         :href="
                             'mailto:' +
@@ -135,8 +139,9 @@ const validateFormData = ():void => {
                         "
                         target="_blank"
                         title="Send your email to the website's owner"
-                        class="cf-mail"
+                        class="cf-buttonlink"
                     >
+                        <EnvelopeIcon class="cfb-icon" />
                         Send e-mail
                     </a>
                 </div>
@@ -146,7 +151,79 @@ const validateFormData = ():void => {
 </template>
 
 <style lang="scss">
-.__honey {
-    opacity: 0;
-}
+    @import '@/styles/theme.scss';
+
+    .contact-container {
+        display: flex;
+    }
+
+    .contact-form {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 800px;
+        border: 2px solid $primary;
+        border-radius: $radius-s;
+        background-color: $light;
+        padding: $space-m $space-s;
+
+        .cf-group {
+            display: flex;
+            flex-direction: column;
+            margin: $space-m 0;
+            .cf-input, .cf-textarea {
+                margin: $space-s 0;
+                padding: $space-xs $space-s;
+                font-size: $txt-s;
+                border: 1px solid lighten($primary, 10%);
+                border-radius: $radius-xs;
+                color: lighten($primary, 15%);
+            }
+            .cf-textarea {
+                min-height: 200px;
+            }
+        }
+    }
+    
+    .__honey {
+        opacity: 0;
+        height: 0;
+    }
+
+    .cf-button-container {
+        margin: $space-m 0;
+        display: flex;
+        justify-content: center;
+
+        .cf-buttonlink {
+            box-sizing: border-box;
+            width: 200px;
+            min-height: 60px;
+            padding: $space-xs $space-s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            border: 1px solid $secondary;
+            border-radius: $radius-xs;
+            color: $secondary;
+            font-size: $txt-s;
+            text-decoration: none;
+            transition: all 200ms ease-in;
+            .cfb-icon {
+                width: $txt-s;
+                height: $txt-s;
+                color: $secondary;
+                margin-right: $space-m;
+                transition: all 200ms ease-in;
+            }
+            &:hover, &:focus {
+                background-color: $secondary;
+                color: $light;
+                .cfb-icon {
+                    color: $light;
+                }
+            }
+        }
+    }
+
 </style>
