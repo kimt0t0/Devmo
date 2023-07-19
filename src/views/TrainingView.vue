@@ -4,9 +4,11 @@
 
 <template>
     <HeroParticle title="My Training, Degrees and Experience" subtitle="If you want to knwo more about my studies and previous experience, this is the right place." />
-    <!-- add illustration here -->
     <section class="classic-section">
         <div class="classic-container">
+            <div class="training-illus-container">
+                <img src="@images/training.jpg" class="training-illus" alt="training picture from pixabay" />
+            </div>
             <ol class="training-list">
                 <TrainingItemComponent 
                 title="Titre Concepteur Développeur d'Applications"
@@ -62,6 +64,20 @@
 
 <style lang="scss">
     @import '@/styles/theme.scss';
+
+    .training-illus-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .training-illus {
+            width: 100%;
+            height: auto;
+            margin-bottom: $space-l;
+            @media (min-width: $bp-m) {
+                width: initial;
+            }
+        }   
+    }
 
     .training-list {
         list-style-type: none;
