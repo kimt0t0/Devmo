@@ -3,8 +3,7 @@
         <div class="classic-container footer-container">
             <div class="footer-content-bloc">
                 <p class="footer-txt"><strong>Made by Kim Robert &nbsp;</strong></p>
-                <p class="footer-txt">with Vue 3, Pinia and Vite for the front-end application,</p>
-                <p class="footer-txt">HeroIcons as icons library and Sass for the style.</p>
+                <p class="footer-txt">With Vue 3, Pinia and Vite for the front-end application, HeroIcons as icons library and Sass for the style.</p>
             </div>
             <div class="footer-content-bloc">
                 <p class="footer-txt __light">Contents and code are protected by French authors rights.</p>
@@ -18,7 +17,7 @@
     
     .footer {
         box-sizing: border-box;
-        border-top: 5px double $dark;
+        border-top: 5px double $primary;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -33,8 +32,9 @@
     }
 
     .footer-txt {
-        color: $dark;
+        color: $primary;
         font-size: $txt-xs;
+        text-align: center;
         font-weight: 400;
         line-height: 1.2;
         margin: 0;

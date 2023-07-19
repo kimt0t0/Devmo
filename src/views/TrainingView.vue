@@ -23,6 +23,38 @@
                 <TrainingItemComponent
                 title="Front-End Web Developer"
                 subtitle="2022-2023 Studio Floax (Vertou)" />
+
+                <LineSeparatorParticle />
+
+                <TrainingItemComponent
+                title="English Teacher (Middle School)"
+                subtitle="2018-2021 - Versailles' area"
+                icon="job" />
+
+                <TrainingItemComponent
+                title="English Capes"
+                subtitle="2018 - As an external candidate" />
+
+                <TrainingItemComponent
+                title="High School Monitor"
+                subtitle="2017-2018 - Coëtlogon High School (Rennes)"
+                icon="job" />
+
+                <TrainingItemComponent
+                title="Master Degree in English (LLCE) - Good"
+                subtitle="2017 - Paris 8 University" />
+
+                <TrainingItemComponent
+                title="Bachelor Degree in English (LLCE)"
+                subtitle="2015 - Rennes 2 University" />
+
+                <TrainingItemComponent
+                title="Literary Preparatory Class"
+                subtitle="2011-2013 - Kerichen (Brest)" />
+
+                <TrainingItemComponent
+                title="Scientific Baccalaureate - Good"
+                subtitle="2011 - Jacques Cartier High School (St Malo)" />
             </ol>
         </div>
     </section>

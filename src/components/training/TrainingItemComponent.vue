@@ -34,7 +34,9 @@
             line-height: 1.5;
 
             .ti-icon {
+                min-width: $txt-s;
                 width: $txt-s;
+                min-height: $txt-s;
                 height: $txt-s;
                 margin-right: $space-s;
             }
@@ -44,7 +46,7 @@
             font-size: $txt-xs;
             font-style: oblique;
             font-weight: 200;
-            margin: 0;
+            margin: 0 0 0 $txt-m;
         }
     }
 </style>
