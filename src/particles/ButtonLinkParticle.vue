@@ -28,6 +28,7 @@
         &.__primary {
             border: 1px solid $primary;
             color: $primary;
+            transition: all 200ms ease-in;
 
             &:hover, &:focus {
                 background-color: $primary;
@@ -38,6 +39,7 @@
         &.__secondary {
             border: 1px solid $secondary;
             color: $secondary;
+            transition: all 200ms ease-in;
 
             &:hover, &:focus {
                 background-color: $secondary;
