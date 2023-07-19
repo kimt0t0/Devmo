@@ -7,7 +7,6 @@ import { useValidators } from '@/composables/formValidators';
 const {
     validateFirstName,
     validateLastName,
-    validateEmail,
     validateTopic,
     validateMessage,
     validateHoney
@@ -19,7 +18,6 @@ let devmail: string = 'kimrobdev44@gmail.com';
 const formData = ref<ContactForm>({
     firstName: '',
     lastName: '',
-    email: '',
     topic: '',
     message: '',
     honey: undefined
@@ -28,12 +26,11 @@ const formData = ref<ContactForm>({
 const validateFormData = ():void => {
     let fname = validateFirstName(formData.value.firstName);
     let lname = validateLastName(formData.value.lastName);
-    let email = validateEmail(formData.value.email);
     let topic = validateTopic(formData.value.topic);
     let message = validateMessage(formData.value.message);
     let honey = validateHoney(formData.value.honey);
 
-    if (fname === true && lname === true && email === true && topic === true && message === true && honey === true) {
+    if (fname === true && lname === true && topic === true && message === true && honey === true) {
          isFormValid.value = true;
     } else isFormValid.value = false;
 }
@@ -65,20 +62,6 @@ const validateFormData = ():void => {
                             id="last-name"
                             name="last-name"
                             placeholder="Nebra"
-                        />
-                    </div>
-                </div>
-
-                <div class="cf-line">
-                    <div class="cf-group">
-                        <label class="cf-label" for="email">Email :</label>
-                        <input
-                            type="text"
-                            v-model="formData.email"
-                            class="cf-input"
-                            id="email"
-                            name="email"
-                            placeholder="matneb@zero.fr"
                         />
                     </div>
                 </div>
@@ -128,13 +111,11 @@ const validateFormData = ():void => {
                             devmail +
                             '?subject=' +
                             formData.topic +
-                            '&body=' +
-                            formData.email +
-                            '%20' +
+                            '%20---%20' +
                             formData.lastName.toUpperCase() +
                             '%20' +
                             formData.firstName +
-                            '%20___' +
+                            '&body=' +
                             formData.message
                         "
                         target="_blank"

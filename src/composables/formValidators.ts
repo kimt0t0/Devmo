@@ -1,7 +1,6 @@
 export function useValidators() {
 
     const regNames = /[a-zA-Z]+'/;
-    // const regMail
     // const regTopic
     // const regMessage
 
@@ -17,10 +16,6 @@ export function useValidators() {
             return true;
         }
         return false;
-    };
-
-    const validateEmail = (email: string): boolean => {
-        return false
     };
 
     const validateTopic = (topic: string): boolean => {
@@ -41,7 +36,6 @@ export function useValidators() {
     return {
         validateFirstName,
         validateLastName,
-        validateEmail,
         validateTopic,
         validateMessage,
         validateHoney
