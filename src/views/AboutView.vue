@@ -18,12 +18,11 @@
 <template>
   <HeroParticle title="Want to know more about..." id="index-title" />
   <IndexParticle :anchors="anchors" />
-  <div class="classic-container">
-    <AboutMeComponent id="about-me" />
-    <CtasComponent />
-    <AboutSiteComponent id="about-site" />
-  </div>
+  <section class="classic-section">
+    <div class="classic-container">
+      <AboutMeComponent />
+      <CtasComponent />
+      <AboutSiteComponent />
+    </div>
+  </section>
 </template>
-
-<style lang="scss">
-</style>

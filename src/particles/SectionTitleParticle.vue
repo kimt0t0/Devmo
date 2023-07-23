@@ -15,6 +15,7 @@
     @import '@/styles/theme.scss';
 
     .section-title {
+        margin: 0;
         font-size: $txt-xl;
         font-weight: 600;
         color: $primary;

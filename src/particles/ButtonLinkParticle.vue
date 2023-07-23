@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <RouterLink :to="path" :name="name" :class="'buttonlink __' + color + ' __' + size"><slot></slot>{{ name }}</RouterLink>
+    <a :href="path" :name="name" :class="'buttonlink __' + color + ' __' + size"><slot></slot>{{ name }}</a>
 </template>
 
 <style lang="scss">
@@ -33,6 +33,10 @@
             &:hover, &:focus {
                 background-color: $primary;
                 color: $light;
+
+                > svg {
+                    color: $light;
+                }
             }
         }
 
@@ -44,6 +48,10 @@
             &:hover, &:focus {
                 background-color: $secondary;
                 color: $light;
+
+                > svg {
+                    color: $light;
+                }
             }
         }
 

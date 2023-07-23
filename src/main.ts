@@ -4,6 +4,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+import BacklinkParticle from './particles/BacklinkParticle.vue'
 import ButtonLinkParticle from '@/particles/ButtonLinkParticle.vue';
 import HeroParticle from '@/particles/HeroParticle.vue';
 import IndexParticle from '@/particles/IndexParticle.vue';
@@ -17,6 +18,7 @@ app.use(createPinia())
 app.use(router)
 
 app
+    .component('BacklinkParticle', BacklinkParticle)
     .component('ButtonLinkParticle', ButtonLinkParticle)
     .component('HeroParticle', HeroParticle)
     .component('IndexParticle', IndexParticle)

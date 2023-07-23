@@ -111,7 +111,7 @@ const validateFormData = ():void => {
                             devmail +
                             '?subject=' +
                             formData.topic +
-                            '%20---%20' +
+                            '%20---%20from%20' +
                             formData.lastName.toUpperCase() +
                             '%20' +
                             formData.firstName +
