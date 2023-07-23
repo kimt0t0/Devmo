@@ -35,7 +35,7 @@
 
     .header-title-container {
         display: flex;
-        flex: 3;
+        flex: 2;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -64,7 +64,7 @@
         display: none;
         @media (min-width: $bp-l) {
             display: flex;
-            flex: 3;
+            flex: 4;
         }
     }
 </style>
