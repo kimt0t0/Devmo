@@ -16,8 +16,9 @@
 
     .section-title {
         margin: 0;
+        font-family: Lato, Raleway, Arial, Helvetica, sans-serif;
         font-size: $txt-xl;
-        font-weight: 600;
+        font-weight: 700;
         color: $primary;
         &.__secondary {
             color: $secondary;

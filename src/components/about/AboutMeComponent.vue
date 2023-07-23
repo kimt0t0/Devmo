@@ -12,7 +12,7 @@
     <div class="me-bloc">
         <p class="me-txt">My name is <strong>Kim ROBERT</strong>. I'm 30 years-old, non-binary (pronouns he / they - or 'il / iel' + masc.) and neuro-atypical (with a 'RQTH').</p>
         <p class="me-txt">I have been <strong>training at My Digital School </strong>and working as a <strong>front-end developer at Studio Floax for a year</strong>. I am now willing to keep training with 
-            MyDigitalSchool's <strong><a href="https://www.mydigitalschool.com/mba-architecte-web" class='primary-link' target='_blank' title="Check the degree's details">@Full-Stack Developer MBA</a> and looking for a two years job opportunity 'en alternance'</strong>  (this is a very French word).</p>
+            MyDigitalSchool's <strong><a href="https://www.mydigitalschool.com/mba-architecte-web" class='secondary-link' target='_blank' title="Check the degree's details">@Full-Stack Developer MBA</a> and looking for a two years job opportunity 'en alternance'</strong>  (this is a very French word).</p>
 
     </div>
 
@@ -40,9 +40,9 @@
     }
 
     .me-txt {
-        font-weight: 200;
+        font-weight: 400;
         >strong {
-            font-weight: 400;
+            font-weight: 500;
         }
     }
 </style>

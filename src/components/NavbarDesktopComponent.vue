@@ -48,6 +48,7 @@
             transition: all 200ms ease-in;
 
             .navlink-desktop {
+                font-size: $txt-m;
                 color: $primary;
                 font-weight: 600;
                 &:hover, &:focus {

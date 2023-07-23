@@ -22,6 +22,7 @@
         border: 1px solid transparent;
         border-radius: $radius-xs;
         padding: $space-s $space-m;
+        /* font-family: Lato, Raleway, Arial, Helvetica, sans-serif; */
         color: $light;
 
         &.__primary {

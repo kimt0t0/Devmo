@@ -10,18 +10,18 @@ import { InformationCircleIcon } from '@heroicons/vue/24/outline';
     </div>
 
     <div class="site-bloc">
-        <p class="site-txt"><strong>I made this mobile-first website with Vue 3 (composition option)</strong>, Vite and Pinia to show my front-end abilities. You may find my GitHub Repository <a href="https://github.com/kimt0t0/Devmo" target="_blank" title="Check my repo !" class="primary-link">@here !</a></p>
+        <p class="site-txt"><strong>I made this mobile-first website with Vue 3 (composition option)</strong>, Vite and Pinia to show my front-end abilities. You may find my GitHub Repository <strong><a href="https://github.com/kimt0t0/Devmo" target="_blank" title="Check my repo !" class="secondary-link">@here !</a></strong></p>
         <p class="site-txt">If you want the latest developments you should probably check on the #development branch. Also, please remember my work is protected with French authors rights). My aim by doing so is to find a new training job for two years (and more on the long term ?)</p>
     </div>
 
     <div class="site-bloc __list">
-        <p class="site-txt">Other tools I used include:</p>
+        <p class="site-txt"><strong>Other tools I used include:</strong></p>
         <ul class="classic-list">
-            <li class="cl-item"><a href="https://coolors.co/" class="primary-link" title="Visit Coolors" target="_blank">@Coolors</a> and <a href="https://webdi.fr/couleur-hexa.php" class="primary-link" title="Visit Webdi" target="_blank">@Webdi</a> for the colors,</li>
-            <li class="cl-item"><a href="https://www.tpgi.com/color-contrast-checker/" class="primary-link" title="Get Colour Contrast Analyzer for free" target="_blank">@Colour Contrast Analyzer</a> to check my colors choices in terms of accessibility,</li>
-            <li class="cl-item"><a href="https://heroicons.com/" class="primary-link" title="Visit HeroIcons" target="_blank">@HeroIcons</a> as the icons library,</li>
-            <li class="cl-item"><a href="https://www.fontsquirrel.com/" class="primary-link" title="Visit FontSquirrel" target="_blank">@FontSquirrel</a> as a free and open-source fonts library,</li>
-            <li class="cl-item"><a href="https://squoosh.app/" class="primary-link" title="Visit Squoosh" target="_blank">@Squoosh</a> to optimize images for the web.</li>
+            <li class="cl-item"><strong><a href="https://coolors.co/" class="secondary-link" title="Visit Coolors" target="_blank">@Coolors</a></strong> and <strong><a href="https://webdi.fr/couleur-hexa.php" class="secondary-link" title="Visit Webdi" target="_blank">@Webdi</a></strong> for the colors,</li>
+            <li class="cl-item"><strong><a href="https://www.tpgi.com/color-contrast-checker/" class="secondary-link" title="Get Colour Contrast Analyzer for free" target="_blank">@Colour Contrast Analyzer</a></strong> to check my colors choices in terms of accessibility,</li>
+            <li class="cl-item"><strong><a href="https://heroicons.com/" class="secondary-link" title="Visit HeroIcons" target="_blank">@HeroIcons</a></strong> as the icons library,</li>
+            <li class="cl-item"><strong><a href="https://www.fontsquirrel.com/" class="secondary-link" title="Visit FontSquirrel" target="_blank">@FontSquirrel</a></strong> as a free and open-source fonts library,</li>
+            <li class="cl-item"><strong><a href="https://squoosh.app/" class="secondary-link" title="Visit Squoosh" target="_blank">@Squoosh</a></strong> to optimize images for the web.</li>
         </ul>
     </div>
 
@@ -46,6 +46,13 @@ import { InformationCircleIcon } from '@heroicons/vue/24/outline';
             .cl-item {
                 line-height: 1.5;
             }
+        }
+    }
+
+    .site-txt, .cl-item {
+        font-weight: 400;
+        > strong {
+            font-weight: 500;
         }
     }
 

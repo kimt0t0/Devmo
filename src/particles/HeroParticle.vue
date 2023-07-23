@@ -29,6 +29,7 @@
     .hero-title-container {
         padding: $space-l 0;
         display: flex;
+        /* font-family: Lato, Raleway, Arial, Helvetica, sans-serif; */
     }
 
     .hero-decorator {

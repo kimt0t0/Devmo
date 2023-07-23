@@ -40,11 +40,12 @@
         justify-content: center;
         align-items: center;
         color: $primary;
+        font-family: Lato, Raleway, Arial, Helvetica, sans-serif;
         .header-title {
             line-height: 1.5;
             margin: 0;
             font-weight: 800;
-            font-size: $txt-l;
+            font-size: $txt-xl;
         }
         .header-subtitle {
             line-height: 1;
