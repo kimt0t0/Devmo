@@ -86,3 +86,5 @@ git add dist
 git commit -m 'adding dist subtree'
 git subtree push --prefix dist origin gh-pages
 ```
+
+DO NOT erase dist file if you don't want to erase and rebuild github pages deployment.
