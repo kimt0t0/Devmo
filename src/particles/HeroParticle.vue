@@ -55,10 +55,14 @@
     }
 
     .hero-title {
-        font-size: $txt-xxl;
+        font-size: $txt-xl;
         color: $primary;
         margin: 0;
         line-height: 1.2;
+
+        @media (min-width: $bp-xs) {
+            font-size: $txt-xxl;
+        }
         &.__secondary {
             color: $secondary;
         }

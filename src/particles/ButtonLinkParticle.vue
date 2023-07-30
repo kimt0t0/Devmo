@@ -52,6 +52,39 @@
                 > svg {
                     color: $light;
                 }
+                
+            }
+        }
+
+        &.__alert {
+            border: 1px solid darken($alert, 35%);
+            color: darken($alert, 35%);
+            transition: all 200ms ease-in;
+
+            &:hover, &:focus {
+                background-color: darken($alert, 35%);
+                color: $light;
+
+                > svg {
+                    color: $light;
+                }
+
+            }
+        }
+
+        &.__danger {
+            border: 1px solid darken($danger, 30%);
+            color: darken($danger, 30%);
+            transition: all 200ms ease-in;
+
+            &:hover, &:focus {
+                background-color: darken($danger, 30%);
+                color: $light;
+
+                > svg {
+                    color: $light;
+                }
+
             }
         }
 
