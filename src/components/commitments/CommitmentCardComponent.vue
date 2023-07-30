@@ -3,12 +3,11 @@
         title: string;
         description?: string;
         color?: string;
-        illustration: string;
     }>();
 </script>
 
 <template>
-    <li :class="'commitment-card __' + color">
+    <div :class="'commitment-card __' + color">
         <div class="cc-illus-container">
             <slot></slot>
             <!-- add icon here -->
@@ -17,7 +16,7 @@
             <h4 class="cc-title">{{ title }}</h4>
             <p class="cc-txt">{{ description }}</p>
         </div>
-    </li>
+    </div>
 </template>
 
 <style lang="scss">

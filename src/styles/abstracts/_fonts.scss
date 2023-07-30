@@ -88,13 +88,6 @@
 
 @font-face {
   font-family: "Lato";
-  src: url("@/assets/fonts/Lato-RegularItalic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Lato";
   src: url("@/assets/fonts/Lato-MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
@@ -111,13 +104,6 @@
   font-family: "Lato";
   src: url("@/assets/fonts/Lato-BoldItalic.ttf") format("truetype");
   font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Lato";
-  src: url("@/assets/fonts/Lato-ExtraBoldItalic.ttf") format("truetype");
-  font-weight: 800;
   font-style: italic;
 }
 
@@ -141,12 +127,6 @@
 // *** RALEWAY ***
 
 // --- Normal
-@font-face {
-  font-family: "Raleway";
-  src: url("@/assets/fonts/Raleway-Hairline.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
 
 @font-face {
   font-family: "Raleway";
@@ -199,25 +179,12 @@
 
 @font-face {
   font-family: "Raleway";
-  src: url("@/assets/fonts/Raleway-Heavy.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Raleway";
   src: url("@/assets/fonts/Raleway-Black.ttf") format("truetype");
   font-weight: 1000;
   font-style: normal;
 }
 
 // --- Italic
-@font-face {
-  font-family: "Raleway";
-  src: url("@/assets/fonts/Raleway-HairlineItalic.ttf") format("truetype");
-  font-weight: 100;
-  font-style: italic;
-}
 
 @font-face {
   font-family: "Raleway";
@@ -230,13 +197,6 @@
   font-family: "Raleway";
   src: url("@/assets/fonts/Raleway-LightItalic.ttf") format("truetype");
   font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Raleway";
-  src: url("@/assets/fonts/Raleway-RegularItalic.ttf") format("truetype");
-  font-weight: 400;
   font-style: italic;
 }
 
@@ -265,13 +225,6 @@
   font-family: "Raleway";
   src: url("@/assets/fonts/Raleway-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 800;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Raleway";
-  src: url("@/assets/fonts/Raleway-HeavyItalic.ttf") format("truetype");
-  font-weight: 900;
   font-style: italic;
 }
 
