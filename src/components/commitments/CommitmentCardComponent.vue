@@ -79,7 +79,7 @@
             height: $txt-xxxl;
 
             &.__vertical {
-                height: 100px;
+                height: 90px;
                 border-radius: $radius-xs;
             }
 
@@ -95,6 +95,7 @@
         text-align: center;
         .cc-title {
             text-transform: uppercase;
+            margin: $space-m 0; 
         }
     }
 </style>

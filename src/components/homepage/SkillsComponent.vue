@@ -49,13 +49,13 @@
         align-items: center;
     }
     .skills-container {
-        background-color: $light;
+        padding: $space-xxl 0;
         border: 1px solid transparent;
         border-radius: $radius-xs;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 80px;
+        margin-bottom: $space-xxxl;
     }
 
     .ability-box {
