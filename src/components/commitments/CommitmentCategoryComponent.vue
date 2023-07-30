@@ -18,6 +18,9 @@
     @import '@/styles/theme.scss';
 
     .title-ter {
+        &.__primary {
+            color: darken($primary, 10%);
+        }
         &.__alert {
             color: darken($alert, 35%);
         }

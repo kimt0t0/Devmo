@@ -30,7 +30,8 @@
         padding: $space-l $space-m;
         border-radius: $radius-s;
         margin: $space-m 0;
-        color: $primary;
+        background: lighten($primary, 50%);
+        color: darken($primary, 10%);
         border: 2px solid $primary;
 
         @media (min-width: $bp-m) {
@@ -76,6 +77,11 @@
         .ccc-icon {
             width: $txt-xxxl;
             height: $txt-xxxl;
+
+            &.__vertical {
+                height: 100px;
+                border-radius: $radius-xs;
+            }
 
             @media (min-width: $bp-l) {
                 width: $txt-xxl;
