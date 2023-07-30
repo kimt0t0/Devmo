@@ -77,3 +77,12 @@ npm run lint
 ### Icons full list
 
 [Heroicons](https://heroicons.com/)
+
+### Deploy an updated version
+
+```sh
+npm run build
+git add dist
+git commit -m 'adding dist subtree'
+git subtree push --prefix dist origin gh-pages
+```
