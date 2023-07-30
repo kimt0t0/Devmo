@@ -38,10 +38,6 @@
 <style lang="scss">
     @import '@/styles/theme.scss';
 
-    .title-fourth.__rondoudou {
-        margin: $space-xl 0;
-    }
-
     .rd-frame {
         box-sizing: border-box;
         width: 200px;

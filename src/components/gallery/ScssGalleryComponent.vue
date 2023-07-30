@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+    import Magic from './scss/MagicComponent.vue';
     import Rondoudou from './scss/RondoudouComponent.vue';
     import SunCircle from './scss/SunCircleComponent.vue';
 </script>
@@ -9,6 +10,7 @@
         <div class="gallery">
             <SunCircle />
             <Rondoudou />
+            <Magic />
         </div>
     </section>
 </template>
