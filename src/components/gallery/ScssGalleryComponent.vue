@@ -1,11 +1,15 @@
 <script lang="ts" setup>
+    import Rondoudou from './scss/RondoudouComponent.vue';
     import SunCircle from './scss/SunCircleComponent.vue';
 </script>
 
 <template>
     <section class="classic-section scss-gallery-section">
-        <h3 class="title-ter scss-gallery-title">Styling Gallery</h3>
-        <SunCircle />
+        <h3 class="title-ter scss-gallery-title" id="css-scss">Styling Gallery</h3>
+        <div class="gallery">
+            <SunCircle />
+            <Rondoudou />
+        </div>
     </section>
 </template>
 
@@ -14,5 +18,17 @@
 
     .scss-gallery-title {
         margin-bottom: $space-l;
+    }
+
+    .gallery {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: $bp-m) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
 </style>
