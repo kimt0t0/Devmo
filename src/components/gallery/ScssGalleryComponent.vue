@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+    import Crow from './scss/CrowComponent.vue';
     import Magic from './scss/MagicComponent.vue';
     import Rondoudou from './scss/RondoudouComponent.vue';
     import SunCircle from './scss/SunCircleComponent.vue';
@@ -11,6 +12,7 @@
             <SunCircle />
             <Rondoudou />
             <Magic />
+            <Crow />
         </div>
     </section>
 </template>
