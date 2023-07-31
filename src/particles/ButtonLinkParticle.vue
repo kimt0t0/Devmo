@@ -1,5 +1,6 @@
 <script lang="ts" setup>
     defineProps<{
+        routerlink?: boolean;
         path: string;
         name: string;
         color: string;
@@ -8,7 +9,8 @@
 </script>
 
 <template>
-    <a :href="path" :name="name" :class="'buttonlink __' + color + ' __' + size"><slot></slot>{{ name }}</a>
+    <RouterLink :to="path" :class="'buttonlink __' + color + ' __' + size" v-if="routerlink"><slot></slot>{{ name }}</RouterLink>
+    <a :href="path" :name="name" :class="'buttonlink __' + color + ' __' + size" v-else><slot></slot>{{ name }}</a>
 </template>
 
 <style lang="scss">
