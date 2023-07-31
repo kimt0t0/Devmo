@@ -2,9 +2,9 @@
     <div class="ctas-container">
         <SectionTitleParticle title="Want to know more ?" />
         <div class="ctas-container">
-            <ButtonLinkParticle class="cta-button" path="/training" name="my training" color="primary" size="larger" />
-            <ButtonLinkParticle class="cta-button" path="/commitments" name="my commitments" color="primary" size="larger" />
-            <ButtonLinkParticle class="cta-button" path="/contact" name="contact me" color="secondary" size="larger" />
+            <ButtonLinkParticle class="cta-button" path="/training" name="my training" color="primary" size="larger" routerlink=true />
+            <ButtonLinkParticle class="cta-button" path="/commitments" name="my commitments" color="primary" size="larger" routerlink=true />
+            <ButtonLinkParticle class="cta-button" path="/contact" name="contact me" color="secondary" size="larger" routerlink=true />
         </div>
     </div>
 </template>
