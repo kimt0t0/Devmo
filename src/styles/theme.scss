@@ -13,6 +13,14 @@ html, body {
     color: $primary;
 }
 
+ul, ol {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style-type: none;
+    }
+}
+
 .classic-section {
     padding: $space-l 0;
 }

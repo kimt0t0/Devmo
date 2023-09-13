@@ -1,105 +1,106 @@
 <template>
-    <div class="gallery-item">
-      <div class="crow-frame">
-        <!-- CROW -->
-        <!-- Head -->
-        <div class="c-head"></div>
-        <div class="c-eye-left"></div>
-        <div class="c-eye-right"></div>
-        <div class="c-beak"></div>
-        <div class="c-beak-hider cbh-01"></div>
-        <div class="c-beak-hider cbh-02"></div>
-        <!-- Neck -->
-        <div class="c-neck cn-left"></div>
-        <div class="c-neck cn-right"></div>
-        <!-- Body -->
-        <div class="c-body"></div>
-        <!-- Arms -->
-        <div class="c-arm ca-left"></div>
-        <div class="c-arm ca-right"></div>
-        <!-- Hand -->
-        <div class="c-hand"></div>
-        <!-- Legs -->
-        <div class="c-leg cl-left"></div>
-        <div class="c-leg cl-right"></div>
-        <!-- Feet -->
-        <div class="c-foot-talon cft-01"></div>
-        <div class="c-foot-talon cft-02"></div>
-        <div class="c-foot-talon cft-03"></div>
-        <div class="c-foot-talon cft-04"></div>
-        <div class="c-foot-talon cft-05"></div>
-    
-        <!-- SWORD -->
-        <div class="s-pommel"></div>
-        <div class="s-handle-bottom"></div>
-    
-        <div class="s-handle-top"></div>
-        <div class="s-handle-circle shc-left">  
-          <div class="s-handle-magic"></div>
-        </div>
-        <div class="s-handle-circle shc-right">
-          <div class="s-handle-magic"></div>  
-        </div>
-    
-        <div class="s-handle-triangle sht-left"></div>
-        <div class="s-handle-triangle sht-right"></div>
-    
-        <div class="s-blade">
-          <div class="s-blade-magic sbm-basis"></div>
-        </div>
-        <div class="s-blade-top">
-          <div class="s-blade-magic sbm-basis-top"></div>
-        </div>
-    
-        <div class="s-blade-magic sbm-detail-01"></div>
-        <div class="s-blade-magic sbm-detail-02"></div>
-        <div class="s-blade-magic sbm-detail-03"></div>
+  <div class="gallery-item">
+    <div class="crow-frame">
+      <!-- CROW -->
+      <!-- Head -->
+      <div class="c-head"></div>
+      <div class="c-eye-left"></div>
+      <div class="c-eye-right"></div>
+      <div class="c-beak"></div>
+      <div class="c-beak-hider cbh-01"></div>
+      <div class="c-beak-hider cbh-02"></div>
+      <!-- Neck -->
+      <div class="c-neck cn-left"></div>
+      <div class="c-neck cn-right"></div>
+      <!-- Body -->
+      <div class="c-body"></div>
+      <!-- Arms -->
+      <div class="c-arm ca-left"></div>
+      <div class="c-arm ca-right"></div>
+      <!-- Hand -->
+      <div class="c-hand"></div>
+      <!-- Legs -->
+      <div class="c-leg cl-left"></div>
+      <div class="c-leg cl-right"></div>
+      <!-- Feet -->
+      <div class="c-foot-talon cft-01"></div>
+      <div class="c-foot-talon cft-02"></div>
+      <div class="c-foot-talon cft-03"></div>
+      <div class="c-foot-talon cft-04"></div>
+      <div class="c-foot-talon cft-05"></div>
+
+      <!-- SWORD -->
+      <div class="s-pommel"></div>
+      <div class="s-handle-bottom"></div>
+
+      <div class="s-handle-top"></div>
+      <div class="s-handle-circle shc-left">
+        <div class="s-handle-magic"></div>
       </div>
+      <div class="s-handle-circle shc-right">
+        <div class="s-handle-magic"></div>
+      </div>
+
+      <div class="s-handle-triangle sht-left"></div>
+      <div class="s-handle-triangle sht-right"></div>
+
+      <div class="s-blade">
+        <div class="s-blade-magic sbm-basis"></div>
+      </div>
+      <div class="s-blade-top">
+        <div class="s-blade-magic sbm-basis-top"></div>
+      </div>
+
+      <div class="s-blade-magic sbm-detail-01"></div>
+      <div class="s-blade-magic sbm-detail-02"></div>
+      <div class="s-blade-magic sbm-detail-03"></div>
     </div>
+    <h4 class="title-fourth">(Made with Scss)</h4>
+  </div>
 </template>
 
 <style lang="scss">
-    @import '@/styles/theme.scss';
+@import '@/styles/theme.scss';
 
-    /* ***** GENERAL ***** */
+/* ***** GENERAL ***** */
 
-    /* *** VARIABLES *** */
-    $white: #FFFFFF;
-    $black: #000000;
-    $grey-01:#020820;
-    $grey-02: #363D4F;
-    $grey-03: #90949F;
-    $pink-01: #FFC9C3;
-    $pink-02: #F16466;
-    $brown-01: #656064;
-    $brown-02: #4F4447;
+/* *** VARIABLES *** */
+$white: #FFFFFF;
+$black: #000000;
+$grey-01: #020820;
+$grey-02: #363D4F;
+$grey-03: #90949F;
+$pink-01: #FFC9C3;
+$pink-02: #F16466;
+$brown-01: #656064;
+$brown-02: #4F4447;
 
-    /* *** MIXINS *** */
-    @mixin center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
+/* *** MIXINS *** */
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    @mixin item {
-    position: absolute;
-    box-sizing: border-box;
-    }
+@mixin item {
+  position: absolute;
+  box-sizing: border-box;
+}
 
-    @mixin bended {
-    transform: rotate(7deg);
-    }
+@mixin bended {
+  transform: rotate(7deg);
+}
 
-    @mixin eye {
-    @include item;
-    z-index: 3;
-    position: absolute;
-    box-sizing: border-box;
-    background-color: $white;
-    width: 1.5rem;
-    height: 1.65rem;
-    border-radius: 50%;
-    }
+@mixin eye {
+  @include item;
+  z-index: 3;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: $white;
+  width: 1.5rem;
+  height: 1.65rem;
+  border-radius: 50%;
+}
 
 /* *** FRAME *** */
 .crow-frame {
@@ -107,9 +108,9 @@
   position: relative;
   width: 20rem;
   height: 20rem;
-  background-color: $white;
+  /* background-color: $white; */
   border-radius: 2rem;
-  box-shadow: 0 0 0.5rem 1rem $white;
+  /* box-shadow: 0 0 0.5rem 1rem $white; */
 }
 
 /* ***** CROW ***** */
@@ -163,13 +164,13 @@
   border-radius: 50%;
 }
 
-.cbh-01{
+.cbh-01 {
   transform: rotate(20deg);
   top: 5rem;
   left: 7.65rem;
 }
 
-.cbh-02{
+.cbh-02 {
   transform: rotate(-20deg);
   top: 5.25rem;
   left: 9.5rem;
@@ -284,34 +285,59 @@
 }
 
 .cft-01 {
-  bottom: 1.6em;
+  bottom: 0rem;
   left: 6.7rem;
   transform: rotate(25deg);
+
+  @media(max-width: 760px) {
+    bottom: 1.6rem;
+  }
+
 }
 
 .cft-02 {
-  bottom: 1.55em;
+  bottom: 0rem;
   left: 6.9rem;
   transform: rotate(25deg);
+
+  @media(max-width: 760px) {
+    bottom: 1.6rem;
+  }
+
 }
 
 .cft-03 {
-  bottom: 1.6em;
+  bottom: 0rem;
   left: 7.1rem;
   transform: rotate(-25deg);
   border-radius: 0 3rem 5rem 0;
+
+  @media(max-width: 760px) {
+    bottom: 1.6rem;
+  }
+
 }
 
 .cft-04 {
-  bottom: 2.5em;
+  bottom: 0.5rem;
   right: 8.25rem;
   transform: rotate(12deg);
+
+  @media(max-width: 760px) {
+    bottom: 2.35rem;
+  }
+
 }
 
 .cft-05 {
-  bottom: 2.45em;
-  right: 7.85rem;
+  bottom: 0.5rem;
+  right: 8rem;
   transform: rotate(4deg);
+
+  @media(max-width: 760px) {
+    bottom: 2.35rem;
+  }
+
 }
 
 /* ***** SWORD ***** */
@@ -373,7 +399,7 @@
   right: 5rem;
 }
 
-.shc-right{
+.shc-right {
   box-shadow: -0.08rem -0.15rem 0.15rem darken($brown-02, 10%) inset;
   top: 5.65rem;
   right: 2rem;
