@@ -84,7 +84,7 @@ const repositories = [
                 <a :href="repository.path" :title="repository.title" target="_blank" class="card-link">
                     <div class="card-icons">
                         <img v-for="(icon, index) of repository.icons" class="card-icon" :key="index"
-                            :src="'/src/assets/icons/' + icon.path" :alt="icon.name" />
+                            :src="'/assets/icons/' + icon.path" :alt="icon.name" />
                     </div>
                     <div class="card-contents">
                         <h4 class="title-fourth fl-card-title">{{ repository.title }}</h4>
