@@ -1,4 +1,14 @@
 <script lang="ts" setup>
+import htmlIcon from '@icons/html-icon.webp';
+import expressIcon from '@icons/express-icon.webp';
+import mongooseIcon from '@icons/mongoose-icon.webp';
+import nestIcon from '@icons/nest-icon.webp';
+import nodeIcon from '@icons/node-icon.webp';
+import reactIcon from '@icons/react-icon.webp';
+import scssIcon from '@icons/scss-icon.webp';
+import typeormIcon from '@icons/typeorm-icon.webp';
+import vue3Icon from '@icons/vue-icon.webp';
+
 const repositories = [
     {
         path: 'https://github.com/kimt0t0/devmo',
@@ -6,15 +16,15 @@ const repositories = [
         text: 'This website\'s repository',
         icons: [
             {
-                path: 'vue-icon.webp',
+                path: vue3Icon,
                 name: 'Vue 3'
             },
             {
-                path: 'html-icon.webp',
+                path: htmlIcon,
                 name: 'HTML5'
             },
             {
-                path: 'scss-icon.webp',
+                path: scssIcon,
                 name: 'Scss'
             },
         ]
@@ -25,23 +35,23 @@ const repositories = [
         text: 'Textual Roleplay, Unachieved',
         icons: [
             {
-                path: 'react-icon.webp',
+                path: reactIcon,
                 name: 'React'
             },
             {
-                path: 'scss-icon.webp',
+                path: scssIcon,
                 name: 'Scss'
             },
             {
-                path: 'node-icon.webp',
+                path: nodeIcon,
                 name: 'Node'
             },
             {
-                path: 'express-icon.webp',
+                path: expressIcon,
                 name: 'Express'
             },
             {
-                path: 'mongoose-icon.webp',
+                path: mongooseIcon,
                 name: 'Mongoose'
             },
         ]
@@ -52,23 +62,23 @@ const repositories = [
         text: 'Literary Blog, Work In Progress',
         icons: [
             {
-                path: 'vue-icon.webp',
+                path: vue3Icon,
                 name: 'Vue 3'
             },
             {
-                path: 'scss-icon.webp',
+                path: scssIcon,
                 name: 'Scss'
             },
             {
-                path: 'nest-icon.webp',
+                path: nestIcon,
                 name: 'Nest.js'
             },
             {
-                path: 'mongoose-icon.webp',
+                path: mongooseIcon,
                 name: 'Mongoose'
             },
             {
-                path: 'typeorm-icon.webp',
+                path: typeormIcon,
                 name: 'TypeOrm'
             },
         ]
@@ -83,8 +93,8 @@ const repositories = [
             <li class="rl-card" v-for="(repository, index) of repositories" :key="index">
                 <a :href="repository.path" :title="repository.title" target="_blank" class="card-link">
                     <div class="card-icons">
-                        <img v-for="(icon, index) of repository.icons" class="card-icon" :key="index"
-                            :src="'/assets/icons/' + icon.path" :alt="icon.name" />
+                        <img v-for="(icon, index) of repository.icons" class="card-icon" :key="index" :src="icon.path"
+                            :alt="icon.name" />
                     </div>
                     <div class="card-contents">
                         <h4 class="title-fourth fl-card-title">{{ repository.title }}</h4>
