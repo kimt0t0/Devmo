@@ -4,7 +4,7 @@ import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
 
-const FlagIcon = require('vue-flag-icon');
+import FlagIcon from 'vue-flag-icon';
 
 import BacklinkParticle from './particles/BacklinkParticle.vue'
 import ButtonLinkParticle from '@/particles/ButtonLinkParticle.vue';
