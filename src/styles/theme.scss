@@ -35,6 +35,11 @@ ul, ol {
     margin: 0 auto;
 }
 
+.horizontal-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .hero-title-icon {
     width: $txt-xl;
     height: $txt-xl;

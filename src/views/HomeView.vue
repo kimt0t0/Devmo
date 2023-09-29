@@ -5,12 +5,12 @@ import SkillsComponent from '@/components/homepage/SkillsComponent.vue';
 import AimsComponent from '@/components/homepage/AimsComponent.vue';
 
 const titleFr = {
-  "title": "Bienvenue sur mon site !",
-  "subtitle": "Prenez le temps de visiter et contactez-moi si vous avez des questions"
+  "title": "Bienvenue !",
+  "subtitle": "Je suis développeur·e we front-end et full-stack. Besoin d'un site personnel ou professionnel ? D'un blog ? Vous êtes au bon endroit."
 };
 const titleEn = {
-  "title": "Welcome on my website !",
-  "subtitle": "Please take your time to visit and feel free to contact me if you have any question"
+  "title": "Welcome !",
+  "subtitle": "I'm a front-end and full-stack web developer. If you need a personal or professional website, or a blog, you're in the right place."
 };
 </script>
 
@@ -22,6 +22,7 @@ const titleEn = {
   <HeroParticle v-if="useLanguageStore().language === Language.EN" :title="titleEn.title" :subtitle="titleEn.subtitle" />
   <SkillsComponent />
   <AimsComponent />
+  <!-- Add prices component -->
 </template>
 
 <style lang="scss">

@@ -29,6 +29,7 @@ defineProps<{
 .hero-title-container {
     padding: $space-l 0;
     display: flex;
+    max-width: 940px;
     /* font-family: Lato, Raleway, Arial, Helvetica, sans-serif; */
 }
 

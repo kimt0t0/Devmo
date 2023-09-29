@@ -32,16 +32,15 @@ const toggleShowLanguageDropdown = (): void => {
     position: sticky;
     z-index: 2;
     width: 80px;
-    top: 340px;
+    top: 280px;
     right: $space-m;
     margin-left: auto;
 
     @media (min-width: $bp-m) {
-        top: 200px;
+        top: 300px;
     }
 
     @media (min-width: $bp-l) {
-        top: 240px;
         right: $space-l
     }
 
