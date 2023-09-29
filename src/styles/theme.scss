@@ -6,11 +6,15 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: lighten($neutral, 15%);
+    background-color: color($neutral, 60);
     font-family: Raleway, Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 20px;
-    color: $primary;
+    color: color($dark, 50);
+}
+
+h1, h2, h3, h4 {
+    font-family: Gadugi, Raleway, Arial, Helvetica, sans-serif;
 }
 
 ul, ol {
@@ -34,10 +38,21 @@ ul, ol {
 .hero-title-icon {
     width: $txt-xl;
     height: $txt-xl;
-    color: $primary;
+    border-radius: 50%;
+    padding: $space-xs;
+    color: color($dark, 50);
     margin-right: $space-s;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+
     &.__secondary {
         color: $secondary;
+    }
+
+    &:hover {
+        transform: translateY(-$space-s) rotate(-25deg);
+        background-color: color($secondary, 55);
+        box-shadow: 0 0 3px color($secondary, 55);
     }
 }
 
@@ -56,7 +71,7 @@ ul, ol {
 }
 
 .primary-link {
-    color: $primary;
+    color: color($primary, 50);
     transition: all 200ms ease-in;
     &:hover, &:focus {
         text-decoration: none;
@@ -64,7 +79,7 @@ ul, ol {
 }
 
 .secondary-link {
-    color: $secondary;
+    color: color($secondary, 20);
     transition: all 200ms ease-in;
     &:hover, &:focus {
         text-decoration: none;

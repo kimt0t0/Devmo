@@ -21,7 +21,7 @@ import LanguageMenuComponent from './components/LanguageMenuComponent.vue';
 
 .main {
   min-height: 800px;
-  padding: 64px 0 0;
+  padding: 240px 0 0;
   position: relative;
 }
 </style>

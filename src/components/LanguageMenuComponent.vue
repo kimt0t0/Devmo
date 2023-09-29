@@ -61,18 +61,18 @@ const toggleShowLanguageDropdown = (): void => {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: $radius-s;
+    border-radius: $radius-circle;
     text-transform: capitalize;
     background-color: transparent;
-    border: 2px solid $secondary;
-    color: $secondary;
+    border: 2px solid color($alert, 40);
+    color: color($alert, 40);
     font-size: $txt-xs;
     cursor: pointer;
     transition: all 200ms ease-in;
 
     &:hover,
     &:focus {
-        background-color: $secondary;
+        background-color: color($alert, 40);
         color: $light;
     }
 }
@@ -83,7 +83,7 @@ const toggleShowLanguageDropdown = (): void => {
     right: 20px;
     width: 80px;
     height: fit-content;
-    border: 1px solid $secondary;
+    border: 1px solid color($alert, 40);
     border-radius: $radius-s;
     overflow: hidden;
 
@@ -95,9 +95,9 @@ const toggleShowLanguageDropdown = (): void => {
         display: flex;
         align-items: center;
         border: 1px solid transparent;
-        border-bottom: 1px solid $secondary;
+        border-bottom: 1px solid color($alert, 40);
         background-color: $light;
-        color: $secondary;
+        color: color($alert, 40);
         font-size: $txt-xs;
         text-transform: uppercase;
         cursor: pointer;
@@ -105,7 +105,7 @@ const toggleShowLanguageDropdown = (): void => {
 
         &:hover,
         &:focus {
-            background-color: $secondary;
+            background-color: color($alert, 40);
             color: $light;
         }
 

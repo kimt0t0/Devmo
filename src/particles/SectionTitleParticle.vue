@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-    defineProps<{
-        title: string;
-        color?: string;
-    }>();
+defineProps<{
+    title: string;
+    color?: string;
+}>();
 </script>
 
 <template>
@@ -12,16 +12,17 @@
 </template>
 
 <style lang="scss">
-    @import '@/styles/theme.scss';
+@import '@/styles/theme.scss';
 
-    .section-title {
-        margin: 0;
-        font-family: Lato, Raleway, Arial, Helvetica, sans-serif;
-        font-size: $txt-xl;
-        font-weight: 700;
-        color: $primary;
-        &.__secondary {
-            color: $secondary;
-        }
+.section-title {
+    margin: 0;
+    font-family: Lato, Raleway, Arial, Helvetica, sans-serif;
+    font-size: $txt-xl;
+    font-weight: 700;
+    color: color($dark, 50);
+
+    &.__secondary {
+        color: $secondary;
     }
+}
 </style>

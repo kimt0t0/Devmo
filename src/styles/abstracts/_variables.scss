@@ -1,11 +1,11 @@
 // Colors
-$dark: #2F2F2F;
-$light: #FEFCFA; //#FEF5EF;
-$neutral: #BDDBD0;
-$primary: #375435; //#84B082;
-$secondary:  #353754; //#6B456D; //#91A6FF;
-$alert: #E3B23C;
-$danger: #F6511D;
+$dark: hsl(34,13,36); // #675D50
+$light: hsl(30,67,99); // #FEFCFA
+$primary: hsl(25,20,58); // #A9907E
+$secondary:  hsl(38,70,84); // #F3DEBA
+$neutral: hsl(118,18,72); // #ABC4AA
+$alert: hsl(35,100,68); // #FFBB5C
+$danger: hsl(12,74,56); // #E25E3E
 
 // Containers
 $classic-ctn: 1200px;

@@ -63,22 +63,22 @@ const navlinksEn = useNavLinksStore().navlinks.en;
     align-items: center;
     box-sizing: border-box;
     background-color: transparent;
-    color: $primary;
-    border-radius: $radius-s;
-    border: 2px solid $primary;
+    color: color($dark, 50);
+    border-radius: $radius-circle;
+    border: 2px solid color($dark, 50);
     padding: $space-s;
-    transition: all 200ms ease-in;
+    transition: all 300ms ease-in;
 
     .nav-icon {
         cursor: pointer;
         height: 1.5rem;
         width: auto;
-        color: $primary;
+        color: color($dark, 50);
     }
 
     &:hover,
     &:focus {
-        background-color: $primary;
+        background-color: color($dark, 50);
 
         .nav-icon {
             color: $light;
@@ -86,19 +86,19 @@ const navlinksEn = useNavLinksStore().navlinks.en;
     }
 
     &.__contact {
-        color: $secondary;
-        border: 2px solid $secondary;
+        color: color($danger, 50);
+        border: 2px solid color($danger, 50);
 
         .nav-icon {
-            color: $secondary;
+            color: color($danger, 50);
         }
 
         &:hover,
         &:focus {
-            background-color: $secondary;
+            background-color: color($danger, 50);
 
             .nav-icon {
-                color: $light;
+                color: color($neutral, 60);
             }
         }
     }
@@ -147,4 +147,5 @@ const navlinksEn = useNavLinksStore().navlinks.en;
             }
         }
     }
-}</style>
+}
+</style>

@@ -58,7 +58,7 @@ const navlinksEn = useNavLinksStore().navlinks.en;
 
         .navlink-desktop {
             font-size: $txt-s;
-            color: $primary;
+            color: color($dark, 50);
             font-weight: 600;
 
             &:hover,
