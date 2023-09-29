@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useLanguageStore } from '@/stores/language.ts';
+import { useLanguageStore } from '@/stores/language';
 import { Language } from '@/enums/Language';
 
 const showLanguageDropdown = ref<boolean>(false);

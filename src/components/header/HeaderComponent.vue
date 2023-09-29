@@ -1,14 +1,19 @@
 <script lang="ts" setup>
+import { useLanguageStore } from '@/stores/language';
+import { Language } from '@/enums/Language';
 import NavbarMobileComponent from './NavbarMobileComponent.vue';
 import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
+
+const titleFr = "DEvMO de Kim"
+const titleEn = "Kim's DEvMO"
 </script>
 
 <template>
     <header class="header">
         <div class="classic-container header-container">
             <div class="header-title-container">
-                <h1 class="header-title">DEvMO</h1>
-                <p class="header-subtitle">by kimro</p>
+                <p class="header-title">{{
+                    useLanguageStore().language === Language.EN ? titleEn : titleFr }}</p>
             </div>
             <NavbarMobileComponent class="navbar-component" />
             <NavbarDesktopComponent class="navbar-desktop-component" />
@@ -49,10 +54,6 @@ import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
         font-size: $txt-xl;
     }
 
-    .header-subtitle {
-        line-height: 1;
-        margin: 0;
-    }
 }
 
 .navbar-component {
@@ -68,6 +69,7 @@ import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
 
     @media (min-width: $bp-l) {
         display: flex;
-        flex: 4;
+        flex: 5;
     }
-}</style>
+}
+</style>
