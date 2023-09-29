@@ -77,6 +77,7 @@ npm run lint
 ### Icons full list
 
 [Heroicons](https://heroicons.com/)
+[FlagIcons](https://www.npmjs.com/package/vue-flag-icon)
 
 ### Deploy an updated version
 
@@ -88,3 +89,11 @@ git subtree push --prefix dist origin gh-pages
 ```
 
 DO NOT erase dist file if you don't want to erase and rebuild github pages deployment.
+
+## Upcoming updates
+1. Freelance profile details and jobs search
+2. New skills presentation
+3. New contact form
+4. Languages menu
+5. Automatized and gamified quote and advice (services to offer and pricing OR advice according to users responses)
+6. Ongoing project(s)
