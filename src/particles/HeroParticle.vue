@@ -27,7 +27,7 @@ defineProps<{
 @import '@/styles/theme.scss';
 
 .hero-title-container {
-    padding: $space-l 0;
+    padding-top: $space-l;
     display: flex;
     max-width: 940px;
     /* font-family: Lato, Raleway, Arial, Helvetica, sans-serif; */

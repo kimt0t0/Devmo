@@ -44,7 +44,7 @@ ul, ol {
     width: $txt-xl;
     height: $txt-xl;
     border-radius: 50%;
-    padding: $space-xs;
+    // padding: $space-s;
     color: color($dark, 50);
     margin-right: $space-s;
     cursor: pointer;
@@ -55,9 +55,7 @@ ul, ol {
     }
 
     &:hover {
-        transform: translateY(-$space-s) rotate(-25deg);
-        background-color: color($secondary, 55);
-        box-shadow: 0 0 3px color($secondary, 55);
+        transform: translateY(-$space-s) rotate(-18deg);
     }
 }
 

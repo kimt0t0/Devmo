@@ -2,51 +2,228 @@
 import { ref } from 'vue';
 import { useLanguageStore } from '@/stores/language';
 import { Language } from '@/enums/Language';
-import { ComputerDesktopIcon } from '@heroicons/vue/24/outline';
+import { ComputerDesktopIcon, Cog8ToothIcon, BeakerIcon } from '@heroicons/vue/24/outline';
 import type { CardContent } from '@/interfaces/CardContent.interface';
-import CtasComponent from '@/components/CtasComponent.vue';
 import CardParticle from '@/particles/CardParticle.vue';
 
 const servicesFr = ref<CardContent[]>([
     {
         illustrationPath: '',
-        title: 'Sites vitrines'
+        title: 'Intégration de pages web'
     },
     {
         illustrationPath: '',
-        title: 'Sites e-commerce'
+        title: 'Sites vitrine ou e-commerce'
     },
     {
         illustrationPath: '',
-        title: 'Interfaces responsives'
+        title: 'Responsive',
+        color: 'danger'
     },
     {
         illustrationPath: '',
-        title: 'Optimisation de votre référencement'
+        title: 'Traductions (anglais) et rédaction'
     },
     {
         illustrationPath: '',
-        title: 'Optimisation de performances'
+        title: 'Référencement, Performances, Éco-conception'
     },
     {
         illustrationPath: '',
-        title: 'Amélioration de l\'accessibilité de votre site'
+        title: 'Accessibilité',
+        color: 'danger'
     },
+]);
+
+const technologiesFr = ref<CardContent[]>([
+    {
+        title: 'Vue 3 + Vite + Pinia',
+        color: 'danger'
+    },
+    {
+        title: 'HTML sémantique'
+    },
+    {
+        title: 'CSS & Sass'
+    },
+    {
+        title: 'Nest.js',
+        color: 'danger'
+    },
+    {
+        title: 'WordPress'
+    },
+    {
+        title: 'Shopify'
+    },
+]);
+
+const softskillsFr = ref<CardContent[]>([
+    {
+        title: 'Compréhension et cadrage de vos besoins',
+        color: 'primary'
+    },
+    {
+        title: 'Conseils sur vos projets'
+    },
+    {
+        title: 'Flexibilité'
+    },
+    {
+        title: 'Résolution de problèmes',
+        color: 'primary'
+    },
+    {
+        title: 'Rédaction de documentation'
+    },
+    {
+        title: 'Écoute & Ouverture d\'esprit'
+    }
+]);
+
+const servicesEn = ref<CardContent[]>([
+    {
+        illustrationPath: '',
+        title: 'Web Integration'
+    },
+    {
+        illustrationPath: '',
+        title: 'Showcase and E-commerce Websites'
+    },
+    {
+        illustrationPath: '',
+        title: 'Responsive',
+        color: 'danger'
+    },
+    {
+        illustrationPath: '',
+        title: 'Writing & Translations (French, English)'
+    },
+    {
+        illustrationPath: '',
+        title: 'SEO, Performances, Green Conception'
+    },
+    {
+        illustrationPath: '',
+        title: 'Accessibility',
+        color: 'danger'
+    },
+]);
+
+const technologiesEn = ref<CardContent[]>([
+    {
+        title: 'Vue 3 + Vite + Pinia',
+        color: 'danger'
+    },
+    {
+        title: 'Semantic HTML'
+    },
+    {
+        title: 'CSS & Sass'
+    },
+    {
+        title: 'Nest.js',
+        color: 'danger'
+    },
+    {
+        title: 'WordPress'
+    },
+    {
+        title: 'Shopify'
+    },
+]);
+
+const softskillsEn = ref<CardContent[]>([
+    {
+        title: 'Evaluate and tally with your needs',
+        color: 'primary'
+    },
+    {
+        title: 'Advice on your projects'
+    },
+    {
+        title: 'Flexibility'
+    },
+    {
+        title: 'Problems Solver',
+        color: 'primary'
+    },
+    {
+        title: 'Write resources for you'
+    },
+    {
+        title: 'Attentive and Open-minded'
+    }
 ]);
 </script>
 
 <template>
     <section class="classic-section skills-section">
-        <div class="classic-container">
-            <div class="skills-title-container">
-                <ComputerDesktopIcon class="hero-title-icon" />
-                <SectionTitleParticle
-                    :title="useLanguageStore().language === Language.FR ? 'Mes services' : 'My Services'" />
+        <!-- French version -->
+        <div v-if="useLanguageStore().language === Language.FR" class="classic-container">
+            <!-- Services -->
+            <div class="class-container skills-container">
+                <div class="skills-title-container">
+                    <ComputerDesktopIcon class="hero-title-icon" />
+                    <SectionTitleParticle title="Mes services" />
+                </div>
+                <div class="horizontal-container">
+                    <CardParticle v-for="(service, index) of servicesFr" :key="index" :content="service" />
+                </div>
             </div>
-            <div class="horizontal-container">
-                <CardParticle v-for="(service, index) of servicesFr" :key="index" :content="service" />
+            <!-- Tech -->
+            <div class="class-container skills-container">
+                <div class="skills-title-container">
+                    <Cog8ToothIcon class="hero-title-icon" />
+                    <SectionTitleParticle title="Mes technos" />
+                </div>
+                <div class="horizontal-container">
+                    <CardParticle v-for="(tech, index) of technologiesFr" :key="index" :content="tech" />
+                </div>
             </div>
-            <CtasComponent />
+            <!-- Soft Skills -->
+            <div class="class-container skills-container">
+                <div class="skills-title-container">
+                    <BeakerIcon class="hero-title-icon" />
+                    <SectionTitleParticle title="Mes Soft Skills" />
+                </div>
+                <div class="horizontal-container">
+                    <CardParticle v-for="(softskill, index) of softskillsFr" :key="index" :content="softskill" />
+                </div>
+            </div>
+        </div>
+        <!-- English version -->
+        <div v-else>
+            <!-- Services -->
+            <div class="class-container skills-container">
+                <div class="skills-title-container">
+                    <ComputerDesktopIcon class="hero-title-icon" />
+                    <SectionTitleParticle title="Services" />
+                </div>
+                <div class="horizontal-container">
+                    <CardParticle v-for="(service, index) of servicesEn" :key="index" :content="service" />
+                </div>
+            </div>
+            <!-- Tech -->
+            <div class="class-container skills-container">
+                <div class="skills-title-container">
+                    <Cog8ToothIcon class="hero-title-icon" />
+                    <SectionTitleParticle title="Techs" />
+                </div>
+                <div class="horizontal-container">
+                    <CardParticle v-for="(tech, index) of technologiesEn" :key="index" :content="tech" />
+                </div>
+            </div>
+            <!-- Soft Skills -->
+            <div class="class-container skills-container">
+                <div class="skills-title-container">
+                    <BeakerIcon class="hero-title-icon" />
+                    <SectionTitleParticle title="Soft Skills" />
+                </div>
+                <div class="horizontal-container">
+                    <CardParticle v-for="(softskill, index) of softskillsEn" :key="index" :content="softskill" />
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -60,13 +237,8 @@ const servicesFr = ref<CardContent[]>([
 }
 
 .skills-container {
-    padding: $space-xxl 0;
-    border: 1px solid transparent;
-    border-radius: $radius-xs;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: $space-xxxl;
+    display: block;
+    margin: $space-xxl 0;
 }
 
 .ability-box {
