@@ -104,7 +104,7 @@ ul, ol {
 
 .title-ter {
     font-family: Lato, Raleway, Arial, Helvetica, sans-serif;
-    font-size: $txt-l;
+    font-size: $txt-m;
     margin: 0;
     line-height: 1.2;
 }
@@ -158,10 +158,10 @@ ul, ol {
         transform: translateY(-$space-s);
     }
     60% {
-        transform: translateY(-$space-xs) rotate(160deg);
+        transform: translateY(-$space-xs) rotate(-160deg);
     }
 
-    to {
-        transform: translateY(0) rotate(360deg);
+    100% {
+        transform: translateY(0) rotate(-360deg);
     }
 }

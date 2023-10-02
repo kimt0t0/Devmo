@@ -14,8 +14,8 @@ export const useNavLinksStore = defineStore('navlinks', () => {
                 path: '/about'
             },
             {
-                name: 'Ma formation',
-                path: '/training'
+                name: 'Mes tarifs',
+                path: '/prices'
             },
             {
                 name: 'Mes engagements',
@@ -36,8 +36,8 @@ export const useNavLinksStore = defineStore('navlinks', () => {
                 path: '/about'
             },
             {
-                name: 'My Training',
-                path: '/training'
+                name: 'Pricing',
+                path: '/prices'
             },
             {
                 name: 'Commitments',

@@ -64,6 +64,7 @@ const toggleShowLanguageDropdown = (): void => {
     text-transform: capitalize;
     background-color: transparent;
     border: 2px solid color($alert, 40);
+    background-color: color($neutral, 60);
     color: color($alert, 40);
     font-size: $txt-xs;
     box-shadow: 2px 2px 3px color($primary, 45);

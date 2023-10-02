@@ -14,8 +14,9 @@ defineProps<{
             <img v-if="content.illustrationPath" :src="content.illustrationPath" class="cp-illus"
                 :alt="'Illustration of ' + content.title" />
         </div>
-        <p :class="'card-text __' + content.color">{{ content.title }}</p>
-        <p :class="'card-text-xs __' + content.color">{{ content.subtext }}</p>
+        <p :class="'card-title __' + content.color">{{ content.title }}</p>
+        <p :class="'card-subtitle __' + content.color" v-if="content.subtitle">{{ content.subtitle }}</p>
+        <p :class="'card-text-xs __' + content.color" v-if="content.subtext">{{ content.subtext }}</p>
     </div>
 </template>
 
@@ -37,8 +38,12 @@ defineProps<{
     align-items: center;
 
     &.__vertical {
-        height: 320px;
+        height: 340px;
         justify-content: flex-start;
+
+        @media (max-width: $bp-s) {
+            height: fit-content;
+        }
     }
 
     &.__danger {
@@ -67,9 +72,9 @@ defineProps<{
     }
 }
 
-.card-text {
+.card-title,
+.card-subtitle {
     text-align: center;
-    font-size: $txt-s;
     font-weight: 600;
     color: color($neutral, 25);
 
@@ -95,8 +100,42 @@ defineProps<{
 
 }
 
+.card-title {
+    font-size: $txt-s;
+}
+
+.card-subtitle {
+    margin: 0;
+    font-size: $txt-xs;
+    width: 80%;
+    padding-bottom: $space-m;
+    margin-bottom: $space-l;
+    border-bottom: 1px solid color($neutral, 25);
+
+    &.__danger {
+        border-color: color($danger, 50);
+    }
+
+    &.__alert {
+        border-color: color($alert, 30);
+    }
+
+    &.__primary {
+        border-color: color($primary, 35);
+    }
+
+    &.__secondary {
+        border-color: color($secondary, 35);
+    }
+
+    &.__tertiary {
+        border-color: color($tertiary, 70);
+    }
+
+}
+
 .card-text-xs {
-    text-align: center;
+    font-size: $txt-xs;
     margin: 0 auto;
     font-weight: 400;
     color: color($neutral, 25);
