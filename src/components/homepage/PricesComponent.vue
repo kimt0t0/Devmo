@@ -8,9 +8,9 @@ import { CardTypes } from '@/enums/CardTypes';
 const pricesFr: CardContent[] = [
     // full custom
     {
-        title: 'Site-vitrine sur-mesure',
+        title: 'Site-vitrine 100% sur-mesure',
         subtext: 'Votre site vitrine réalisé 100% sur mesure.',
-        color: 'danger'
+        color: 'secondary'
     },
     {
         title: 'Mise-à-jour des contenus du site',
@@ -24,7 +24,7 @@ const pricesFr: CardContent[] = [
     {
         title: 'Site-vitrine avec un CMS headless',
         subtext: 'Votre interface graphique sur-mesure, clés-en-main pour administrer vous-même le contenu.',
-        color: 'danger'
+        color: 'tertiary'
     },
     {
         title: 'Mise-à-jour des contenus du site',
@@ -38,7 +38,7 @@ const pricesFr: CardContent[] = [
     {
         title: 'Site e-commerce clés-en-main',
         subtext: 'Un site de vente en ligne sécurisé grâce à un CMS spécialisé, une interface graphique personnlisée.',
-        color: 'danger'
+        color: 'alert'
     },
     {
         title: 'Mise-à-jour des contenus du site',

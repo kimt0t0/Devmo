@@ -42,11 +42,23 @@ defineProps<{
     }
 
     &.__danger {
-        border: 2px solid color($danger, 50);
+        border-color: color($danger, 50);
+    }
+
+    &.__alert {
+        border-color: color($alert, 30);
     }
 
     &.__primary {
         border-color: color($primary, 35);
+    }
+
+    &.__secondary {
+        border-color: color($secondary, 35);
+    }
+
+    &.__tertiary {
+        border-color: color($tertiary, 70);
     }
 
     @media (max-width: $bp-s) {
@@ -65,9 +77,22 @@ defineProps<{
         color: color($danger, 50);
     }
 
+    &.__alert {
+        color: color($alert, 30);
+    }
+
     &.__primary {
         color: color($primary, 35);
     }
+
+    &.__secondary {
+        color: color($secondary, 35);
+    }
+
+    &.__tertiary {
+        color: color($tertiary, 70);
+    }
+
 }
 
 .card-text-xs {
@@ -80,8 +105,20 @@ defineProps<{
         color: color($danger, 50);
     }
 
+    &.__alert {
+        color: color($alert, 30);
+    }
+
     &.__primary {
         color: color($primary, 35);
+    }
+
+    &.__secondary {
+        color: color($secondary, 35);
+    }
+
+    &.__tertiary {
+        color: color($tertiary, 70);
     }
 
 }
