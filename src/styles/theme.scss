@@ -54,16 +54,51 @@ ul, ol {
         color: $secondary;
     }
 
+    &.__neutral {
+        color: color($neutral, 30);
+    }
+
     &:hover {
         transform: translateY(-$space-s) rotate(-18deg);
     }
 }
 
+.text-classic {
+    font-size: 1rem;
+    font-weight: 400;
+    > strong {
+        font-weight: 500;
+    }
+}
+
 .icon-classic {
-    width: $txt-s;
-    height: $txt-s;
-    color: $primary;
+    width: $txt-m;
+    min-width: $txt-m;
+    height: $txt-m;
+    min-height: $txt-m;
+    color: color($dark, 50);
     margin-right: $space-s;
+    cursor: pointer;
+
+    &:hover {
+        animation: circleIcon 600ms ease-in forwards;
+    }
+
+    &.__secondary {
+        color: color($secondary, 35);
+    }
+
+    &.__tertiary {
+        color: color($tertiary, 80);
+    }
+
+    &.__alert {
+        color: color($alert, 30);
+    }
+
+    &.__neutral {
+        color: color($neutral, 40);
+    }
 }
 
 .title-ter {
@@ -113,5 +148,19 @@ ul, ol {
 
     @media (min-width: $bp-xl) {
         margin: $space-xl $space-m $space-xl 0;
+    }
+}
+
+@keyframes circleIcon {
+
+    40% {
+        transform: translateY(-$space-s);
+    }
+    60% {
+        transform: translateY(-$space-xs) rotate(160deg);
+    }
+
+    to {
+        transform: translateY(0) rotate(360deg);
     }
 }

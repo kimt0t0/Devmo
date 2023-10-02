@@ -1,47 +1,41 @@
 <script lang="ts" setup>
-import { EyeIcon, BriefcaseIcon, AcademicCapIcon, MapPinIcon } from '@heroicons/vue/24/outline';
+import { useLanguageStore } from '@/stores/language';
+import { Language } from '@/enums/Language';
+import { SparklesIcon, PaintBrushIcon, BuildingStorefrontIcon, StarIcon, MapPinIcon } from '@heroicons/vue/24/outline';
 </script>
 
 <template>
     <section class="classic-section aims-section">
         <div class="classic-container">
             <div class="aims-title-container">
-                <EyeIcon class="hero-title-icon" />
-                <SectionTitleParticle title="What am I looking for ?" />
+                <SparklesIcon class="hero-title-icon" />
+                <SectionTitleParticle
+                    :title="useLanguageStore().language === Language.FR ? 'Ma mission idéale' : 'My Dream Job'" />
             </div>
             <div class="aims-container">
                 <div class="aims-bloc">
-                    <div class="aims-subbloc">
-                        <h3 class="title-ter">Wanted Jobs:</h3>
-                        <p class="aims-subtitle">"En CDI"</p>
-                        <ol class="aims-list">
-                            <li class="aim-item">
-                                <BriefcaseIcon class="icon-classic" />Front-end web developer
-                            </li>
-                            <li class="aim-item">
-                                <BriefcaseIcon class="icon-classic" />Full-stack web developer
-                            </li>
-                            <li class="aim-item">
-                                <MapPinIcon class="icon-classic" />In (or near) Nantes
-                            </li>
-                        </ol>
-                    </div>
+                    <ol class="aims-list">
+                        <li class="aim-item  __tertiary">
+                            <PaintBrushIcon class="icon-classic __tertiary" />Graphic Interface - with customized and
+                            responsive
+                            styling
+                        </li>
+                        <li class="aim-item __alert">
+                            <BuildingStorefrontIcon class="icon-classic __alert" />Small or Medium Businesses
+                        </li>
+                        <li class="aim-item __neutral">
+                            <MapPinIcon class="icon-classic __neutral" />A Nantes ou 100% à distance
+                        </li>
+                        <li class="aim-item __secondary">
+                            <StarIcon class="icon-classic __secondary" />Bonus: Has a link with the environment, arts,
+                            sports,
+                            music or minorities rights.
+                        </li>
+                    </ol>
                     <div class="aims-img-container">
                         <img src="@images/nantes_map.webp" alt="a map showing nantes city" class="aims-img" />
                     </div>
                 </div>
-            </div>
-            <div class="aims-container">
-                <h4 class="title-fourth">Ideal Job:</h4>
-                <ol class="aims-list __jobs">
-                    <li class="aims-txt">Lots of front-end with Vue 3</li>
-                    <li class="aims-txt">Lots of styling and challenges with Scss</li>
-                    <li class="aims-txt">Team work on project's architecture</li>
-                    <li class="aims-txt">Regular code reviews (at least twice a month)</li>
-                    <li class="aims-txt">Collaboration with a designer or design team</li>
-                    <li class="aims-txt">Some back-end (I work with Nest.js and am curious about GraphQL)</li>
-                    <li class="aims-txt">Nice and motivating atmosphere !</li>
-                </ol>
             </div>
         </div>
     </section>
@@ -57,7 +51,7 @@ import { EyeIcon, BriefcaseIcon, AcademicCapIcon, MapPinIcon } from '@heroicons/
 
 .aims-container {
     padding: $space-m 0;
-    border-top: 1px solid $primary;
+    border-top: 1px solid color($dark, 50);
 }
 
 .aims-bloc {
@@ -94,6 +88,8 @@ import { EyeIcon, BriefcaseIcon, AcademicCapIcon, MapPinIcon } from '@heroicons/
         max-width: 240px;
         max-height: 350px;
         margin: $space-s 0;
+        border: 1px solid color($neutral, 45);
+        box-shadow: 2px 2px 3px color($primary, 45);
     }
 }
 
@@ -110,7 +106,8 @@ import { EyeIcon, BriefcaseIcon, AcademicCapIcon, MapPinIcon } from '@heroicons/
     padding: 0;
 
     @media (min-width: $bp-m) {
-        width: 50%;
+        width: 80%;
+        margin: $space-xxl 0 $space-m;
     }
 
     &.__jobs {
@@ -121,8 +118,26 @@ import { EyeIcon, BriefcaseIcon, AcademicCapIcon, MapPinIcon } from '@heroicons/
         font-size: $txt-s;
         font-weight: 400;
         line-height: 1.2;
+        white-space: pre-line;
         display: flex;
         align-items: center;
+        margin: $space-m 0;
+
+        &.__secondary {
+            color: color($secondary, 35);
+        }
+
+        &.__tertiary {
+            color: color($tertiary, 70);
+        }
+
+        &.__alert {
+            color: color($alert, 30);
+        }
+
+        &.__neutral {
+            color: color($neutral, 40);
+        }
     }
 }
 </style>

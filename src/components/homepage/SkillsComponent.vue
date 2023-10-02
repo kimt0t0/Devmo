@@ -4,7 +4,6 @@ import { useLanguageStore } from '@/stores/language';
 import { Language } from '@/enums/Language';
 import { ComputerDesktopIcon, Cog8ToothIcon, BeakerIcon } from '@heroicons/vue/24/outline';
 import type { CardContent } from '@/interfaces/CardContent.interface';
-import CardParticle from '@/particles/CardParticle.vue';
 
 const servicesFr = ref<CardContent[]>([
     {
@@ -51,17 +50,18 @@ const technologiesFr = ref<CardContent[]>([
         color: 'danger'
     },
     {
-        title: 'WordPress'
+        title: 'Strapi'
     },
     {
-        title: 'Shopify'
+        title: 'A venir: Angular, WordPress, Shopify',
+        color: 'primary'
     },
 ]);
 
 const softskillsFr = ref<CardContent[]>([
     {
         title: 'Compréhension et cadrage de vos besoins',
-        color: 'primary'
+        color: 'danger'
     },
     {
         title: 'Conseils sur vos projets'
@@ -71,7 +71,7 @@ const softskillsFr = ref<CardContent[]>([
     },
     {
         title: 'Résolution de problèmes',
-        color: 'primary'
+        color: 'danger'
     },
     {
         title: 'Rédaction de documentation'
@@ -126,17 +126,18 @@ const technologiesEn = ref<CardContent[]>([
         color: 'danger'
     },
     {
-        title: 'WordPress'
+        title: 'Strapi'
     },
     {
-        title: 'Shopify'
+        title: 'Coming soon: Angular, WordPress, Shopify',
+        color: 'primary'
     },
 ]);
 
 const softskillsEn = ref<CardContent[]>([
     {
         title: 'Evaluate and tally with your needs',
-        color: 'primary'
+        color: 'danger'
     },
     {
         title: 'Advice on your projects'
@@ -146,7 +147,7 @@ const softskillsEn = ref<CardContent[]>([
     },
     {
         title: 'Problems Solver',
-        color: 'primary'
+        color: 'danger'
     },
     {
         title: 'Write resources for you'
@@ -193,7 +194,7 @@ const softskillsEn = ref<CardContent[]>([
             </div>
         </div>
         <!-- English version -->
-        <div v-else>
+        <div v-else class="classic-container">
             <!-- Services -->
             <div class="class-container skills-container">
                 <div class="skills-title-container">
@@ -239,168 +240,5 @@ const softskillsEn = ref<CardContent[]>([
 .skills-container {
     display: block;
     margin: $space-xxl 0;
-}
-
-.ability-box {
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 250px;
-    max-width: 500px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.ability-title {
-    box-sizing: border-box;
-    color: $light;
-    width: 160px;
-    height: 160px;
-    border-radius: $radius-circle;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: $txt-m;
-
-    &.__dev {
-        background-color: $primary;
-    }
-
-    &.__coworking {
-        background-color: $secondary;
-    }
-}
-
-.ability-item {
-    box-sizing: border-box;
-    border: 1px solid transparent;
-    border-radius: $radius-circle;
-    color: lighten($light, 2%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-    position: absolute;
-
-    &.__dev {
-        background-color: $primary;
-    }
-
-    &.__coworking {
-        background-color: $secondary;
-    }
-
-    &.__main {
-        width: 80px;
-        height: 80px;
-        font-size: $txt-s;
-    }
-
-    &.__smaller {
-        width: 60px;
-        height: 60px;
-        font-size: $txt-xs;
-    }
-
-    &.__1 {
-        top: 18%;
-        right: 0;
-    }
-
-    &.__2 {
-        font-size: 14px;
-        top: 4%;
-        right: 26%;
-    }
-
-    &.__3 {
-        top: 8%;
-        left: 20%;
-    }
-
-    &.__4 {
-        top: 20%;
-        left: -2%;
-    }
-
-    &.__5 {
-        bottom: 24%;
-        left: 0;
-    }
-
-    &.__6 {
-        bottom: 12%;
-        left: 18%;
-    }
-
-    &.__7 {
-        font-size: 14px;
-        bottom: 8%;
-        left: -2%;
-    }
-
-    &.__8 {
-        bottom: 25%;
-        right: 0;
-    }
-
-    &.__9 {
-        bottom: 10%;
-        right: 11%;
-    }
-
-    &.__10 {
-        font-size: 14px;
-        bottom: -6%;
-        right: 23%;
-    }
-
-    &.__11 {
-        bottom: 2%;
-    }
-
-    &.__12 {
-        top: -2%;
-        left: 34%;
-    }
-
-    &.__13 {
-        top: 8%;
-        left: 14%;
-    }
-
-    &.__14 {
-        top: -6%;
-        left: 8%;
-    }
-
-    &.__15 {
-        top: 12%;
-        right: 0;
-    }
-
-    &.__16 {
-        right: -2%;
-        bottom: 35%;
-    }
-
-    &.__17 {
-        left: -3%;
-        bottom: 30%;
-    }
-
-    &.__18 {
-        left: 10%;
-        bottom: 9%;
-    }
-
-    &.__19 {
-        bottom: 0;
-        right: 26%;
-    }
 }
 </style>@/interfaces/CardContent.interface

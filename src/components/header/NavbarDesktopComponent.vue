@@ -52,18 +52,23 @@ const navlinksEn = useNavLinksStore().navlinks.en;
     display: flex;
 
     .navitem-desktop {
-        padding: 0 $space-m;
         margin: 0;
         transition: all 200ms ease-in;
 
         .navlink-desktop {
+            padding: $space-s $space-m;
             font-size: $txt-s;
             color: color($dark, 50);
             font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid color($dark, 50);
+            transition: all 300ms ease-in;
 
             &:hover,
             &:focus {
-                text-decoration: none;
+                background-color: color($dark, 50);
+                color: color($neutral, 60);
+                box-shadow: 2px 2px 3px color($primary, 45);
             }
         }
     }

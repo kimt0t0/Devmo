@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useLanguageStore } from '@/stores/language';
 import { Language } from '@/enums/Language';
-import SkillsComponent from '@/components/homepage/SkillsComponent.vue';
 import AimsComponent from '@/components/homepage/AimsComponent.vue';
+import PricesComponent from '@/components/homepage/PricesComponent.vue';
+import SkillsComponent from '@/components/homepage/SkillsComponent.vue';
 
 const titleFr = {
   "title": "Bienvenue !",
@@ -22,6 +23,7 @@ const titleEn = {
   <HeroParticle v-if="useLanguageStore().language === Language.EN" :title="titleEn.title" :subtitle="titleEn.subtitle" />
   <SkillsComponent />
   <AimsComponent />
+  <PricesComponent />
   <!-- Add prices component -->
 </template>
 

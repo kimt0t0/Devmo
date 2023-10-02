@@ -8,6 +8,7 @@ import FlagIcon from 'vue-flag-icon';
 
 import BacklinkParticle from './particles/BacklinkParticle.vue'
 import ButtonLinkParticle from '@/particles/ButtonLinkParticle.vue';
+import CardParticle from '@/particles/CardParticle.vue';
 import HeroParticle from '@/particles/HeroParticle.vue';
 import IndexParticle from '@/particles/IndexParticle.vue';
 import LineSeparatorParticle from '@/particles/LineSeparatorParticle.vue';
@@ -23,6 +24,7 @@ app.use(FlagIcon)
 app
     .component('BacklinkParticle', BacklinkParticle)
     .component('ButtonLinkParticle', ButtonLinkParticle)
+    .component('CardParticle', CardParticle)
     .component('HeroParticle', HeroParticle)
     .component('IndexParticle', IndexParticle)
     .component('LineSeparatorParticle', LineSeparatorParticle)

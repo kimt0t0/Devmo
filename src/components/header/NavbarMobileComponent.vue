@@ -88,6 +88,7 @@ const navlinksEn = useNavLinksStore().navlinks.en;
     &.__contact {
         color: color($danger, 50);
         border: 2px solid color($danger, 50);
+        box-shadow: 2px 2px 3px color($primary, 45);
 
         .nav-icon {
             color: color($danger, 50);
@@ -96,6 +97,7 @@ const navlinksEn = useNavLinksStore().navlinks.en;
         &:hover,
         &:focus {
             background-color: color($danger, 50);
+            box-shadow: 2px 2px 3px color($primary, 30);
 
             .nav-icon {
                 color: color($neutral, 60);
@@ -111,13 +113,13 @@ const navlinksEn = useNavLinksStore().navlinks.en;
     flex-direction: column;
     width: 160px;
     padding: 0;
-    background-color: $primary;
-    border: 1px solid transparent;
+    background-color: color($dark, 50);
+    border: 2px solid transparent;
     border-radius: $radius-s;
     color: $light;
     position: absolute;
-    top: 55px;
-    right: 0;
+    top: 65px;
+    right: $space-s;
     z-index: 1;
 
     .navitem {
@@ -140,10 +142,10 @@ const navlinksEn = useNavLinksStore().navlinks.en;
 
         &:hover,
         &:focus {
-            background-color: $light;
+            background-color: color($neutral, 65);
 
             .navlink {
-                color: $primary;
+                color: color($dark, 50);
             }
         }
     }

@@ -24,6 +24,7 @@ defineProps<{
     padding: $space-s $space-m;
     /* font-family: Lato, Raleway, Arial, Helvetica, sans-serif; */
     color: $light;
+    box-shadow: 2px 2px 3px color($primary, 45);
 
     &.__primary {
         background-color: color($primary, 50);

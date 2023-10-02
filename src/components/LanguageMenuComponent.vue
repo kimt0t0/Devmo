@@ -66,6 +66,7 @@ const toggleShowLanguageDropdown = (): void => {
     border: 2px solid color($alert, 40);
     color: color($alert, 40);
     font-size: $txt-xs;
+    box-shadow: 2px 2px 3px color($primary, 45);
     cursor: pointer;
     transition: all 200ms ease-in;
 
@@ -73,6 +74,7 @@ const toggleShowLanguageDropdown = (): void => {
     &:focus {
         background-color: color($alert, 40);
         color: $light;
+        box-shadow: 2px 2px 3px color($primary, 30);
     }
 }
 
