@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
+import { useLegalsStore } from './stores/legals';
 import HeaderComponent from './components/header/HeaderComponent.vue';
-import WarningWipComponent from './components/WarningWipComponent.vue';
-import FooterComponent from './components/FooterComponent.vue';
+import FooterComponent from './components/footer/FooterComponent.vue';
 import LanguageMenuComponent from './components/LanguageMenuComponent.vue';
+import LegalsComponent from './components/footer/LegalsComponent.vue';
 </script>
 
 <template>
   <HeaderComponent />
-  <WarningWipComponent />
+  <LegalsComponent v-if="useLegalsStore().showLegals" />
   <main class="main">
     <LanguageMenuComponent />
     <RouterView />

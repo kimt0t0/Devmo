@@ -151,9 +151,9 @@ const conditionsFr: string[] = [
 const conditionsEn: string[] = [
     'Pricing might be increased if you need to buy a domain name, plugins or features, depending on your project\'s needs.',
     'Any additional page that is not included in the initial package may result in a price raise.',
-    'Je prends le temps d\'échanger et identifier vos besoins avant le démarrage de chaque pour anticiper ces coûts et éviter les mauvaises surprises.',
-    'Le démarrage d\'un projet (design, code) est conditionné au versement d\'un acompte de 30% de votre forfait.',
-    'En cas de problème dont je serais responsable sur votre site, les rectifications sont évidemment gratuites.'
+    'Let\'s take the time to tchat and identify your needs before coding. Thus we can anticipate costs and avoid unpleasant surprises.',
+    'I start coding with a deposit of 30% of your package.',
+    'If there is any issue I am accountable for on your website, fixes are free.'
 ]
 
 </script>
