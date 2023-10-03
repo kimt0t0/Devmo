@@ -63,7 +63,7 @@ const toggleShowLanguageDropdown = (): void => {
     border-radius: $radius-circle;
     text-transform: capitalize;
     background-color: transparent;
-    border: 2px solid color($alert, 40);
+    border: 2px solid color($danger, 50);
     background-color: color($neutral, 60);
     color: color($alert, 40);
     font-size: $txt-xs;
@@ -71,9 +71,14 @@ const toggleShowLanguageDropdown = (): void => {
     cursor: pointer;
     transition: all 200ms ease-in;
 
+    .fi {
+        border: 1px solid color($dark, 50);
+        border-radius: $radius-xs;
+    }
+
     &:hover,
     &:focus {
-        background-color: color($alert, 40);
+        background-color: color($danger, 50);
         color: $light;
         box-shadow: 2px 2px 3px color($primary, 30);
     }
@@ -85,7 +90,7 @@ const toggleShowLanguageDropdown = (): void => {
     right: 20px;
     width: 80px;
     height: fit-content;
-    border: 1px solid color($alert, 40);
+    border: 1px solid color($danger, 50);
     border-radius: $radius-s;
     overflow: hidden;
 
@@ -97,9 +102,9 @@ const toggleShowLanguageDropdown = (): void => {
         display: flex;
         align-items: center;
         border: 1px solid transparent;
-        border-bottom: 1px solid color($alert, 40);
-        background-color: $light;
-        color: color($alert, 40);
+        border-bottom: 1px solid color($danger, 50);
+        background-color: color($neutral, 60);
+        color: color($danger, 50);
         font-size: $txt-xs;
         text-transform: uppercase;
         cursor: pointer;
@@ -107,12 +112,14 @@ const toggleShowLanguageDropdown = (): void => {
 
         &:hover,
         &:focus {
-            background-color: color($alert, 40);
-            color: $light;
+            background-color: color($danger, 50);
+            color: color($neutral, 60);
         }
 
         .fi {
             margin-right: $space-xs;
+            border: 1px solid color($dark, 50);
+            border-radius: $radius-xs;
         }
     }
 }

@@ -14,17 +14,37 @@ import { SparklesIcon, PaintBrushIcon, BuildingStorefrontIcon, StarIcon, MapPinI
             </div>
             <div class="aims-container">
                 <div class="aims-bloc">
-                    <ol class="aims-list">
+                    <!-- French list -->
+                    <ol class="aims-list" v-if="useLanguageStore().language === Language.FR">
+                        <li class="aim-item  __tertiary">
+                            <PaintBrushIcon class="icon-classic __tertiary" />Interface graphique - avec style responsive
+                            personnalisé
+                        </li>
+                        <li class="aim-item __alert">
+                            <BuildingStorefrontIcon class="icon-classic __alert" />Petite / moyenne entreprise, association,
+                            personne individuelle
+                        </li>
+                        <li class="aim-item __neutral">
+                            <MapPinIcon class="icon-classic __neutral" />A Nantes (ou proche) ou 100% à distance
+                        </li>
+                        <li class="aim-item __secondary">
+                            <StarIcon class="icon-classic __secondary" />Bonus: un lien avec l'écologie, les arts, le sport,
+                            la musique, les droits ou l'inclusion des minorités...
+                        </li>
+                    </ol>
+                    <!-- English list -->
+                    <ol class="aims-list" v-else>
                         <li class="aim-item  __tertiary">
                             <PaintBrushIcon class="icon-classic __tertiary" />Graphic Interface - with customized and
                             responsive
                             styling
                         </li>
                         <li class="aim-item __alert">
-                            <BuildingStorefrontIcon class="icon-classic __alert" />Small or Medium Businesses
+                            <BuildingStorefrontIcon class="icon-classic __alert" />Small or Medium Businesses, Charitable
+                            Associations and individuals
                         </li>
                         <li class="aim-item __neutral">
-                            <MapPinIcon class="icon-classic __neutral" />A Nantes ou 100% à distance
+                            <MapPinIcon class="icon-classic __neutral" />In / near Nantes or 100% from home
                         </li>
                         <li class="aim-item __secondary">
                             <StarIcon class="icon-classic __secondary" />Bonus: Has a link with the environment, arts,

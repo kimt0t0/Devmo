@@ -6,7 +6,7 @@ import SkillsComponent from '@/components/homepage/SkillsComponent.vue';
 
 const titleFr = {
   "title": "Bienvenue !",
-  "subtitle": "Je suis développeur·e we front-end et full-stack. Besoin d'un site personnel ou professionnel ? D'un blog ? Vous êtes au bon endroit."
+  "subtitle": "Je suis développeur·e web front-end et full-stack. Besoin d'un site personnel ou professionnel ? D'un blog ? Vous êtes au bon endroit."
 };
 const titleEn = {
   "title": "Welcome !",

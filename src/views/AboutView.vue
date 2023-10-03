@@ -82,7 +82,7 @@ import { CursorArrowRippleIcon } from '@heroicons/vue/24/outline';
           </p>
           <ul class="about-list">
             <li class="al-item">With
-              <strong>small / medium size businesses, associations or
+              <strong>small / medium size businesses, charitable organizations or
                 individuals.</strong>
             </li>
             <li class="al-item">

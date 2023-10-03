@@ -27,11 +27,10 @@ import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
     box-sizing: border-box;
     min-height: 140px;
     padding: $space-s;
-    border-bottom: $space-xxl solid color($neutral, 55);
 
     &::after {
         content: "";
-        background-color: color($neutral, 55);
+        background-color: color($tertiary, 60);
         width: 140%;
         height: 120px;
         border-radius: 0 0 50% 50%;
@@ -39,6 +38,16 @@ import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
         top: 140px;
         left: -20%;
         box-shadow: 0 5px 8px color($dark, 70);
+
+    }
+
+    @media (max-width: $bp-m) {
+        min-height: 120px;
+
+        &::after {
+            top: 120px;
+            height: 60px;
+        }
     }
 }
 
@@ -65,9 +74,9 @@ import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
         font-size: $txt-l;
 
         .__accent {
-            color: color($danger, 50);
-            border-left: 4px solid color($danger, 50);
-            border-bottom: 4px solid color($danger, 50);
+            color: color($tertiary, 60);
+            border-left: 4px solid color($tertiary, 60);
+            border-bottom: 4px solid color($tertiary, 60);
             padding-left: $space-s;
             margin-left: $space-xs;
             border-radius: $radius-xl;
