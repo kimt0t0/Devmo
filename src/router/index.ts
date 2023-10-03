@@ -28,16 +28,11 @@ const router = createRouter({
       name: 'contact',
       component: () => import('@/views/ContactView.vue')
     },
-    {
-      path: '/training',
-      name: 'training',
-      component: () => import('@/views/TrainingView.vue')
-    },
-    {
-      path: '/gallery',
-      name: 'gallery',
-      component: () => import('@/views/GalleryView.vue')
-    },
+    // {
+    //   path: '/gallery',
+    //   name: 'gallery',
+    //   component: () => import('@/views/GalleryView.vue')
+    // },
     {
       path: '/commitments',
       name: 'commitments',

@@ -32,17 +32,17 @@ defineProps<{
     /* Colors */
 
     &.__neutral {
-        border: 1px solid color($neutral, 50);
-        color: color($neutral, 50);
+        border: 1px solid color($neutral, 25);
+        color: color($neutral, 25);
         transition: all 200ms ease-in;
 
         &:hover,
         &:focus {
-            background-color: color($neutral, 50);
-            color: $light;
+            background-color: color($neutral, 25);
+            color: color($neutral, 65);
 
             >svg {
-                color: $light;
+                color: color($neutral, 65);
             }
         }
     }
@@ -80,17 +80,34 @@ defineProps<{
     }
 
     &.__secondary {
-        border: 1px solid $secondary;
-        color: $secondary;
+        border: 1px solid color($secondary, 30);
+        color: color($secondary, 30);
         transition: all 200ms ease-in;
 
         &:hover,
         &:focus {
-            background-color: $secondary;
-            color: $light;
+            background-color: color($secondary, 30);
+            color: color($secondary, 55);
 
             >svg {
-                color: $light;
+                color: color($secondary, 55);
+            }
+
+        }
+    }
+
+    &.__tertiary {
+        border: 1px solid color($tertiary, 70);
+        color: color($tertiary, 70);
+        transition: all 200ms ease-in;
+
+        &:hover,
+        &:focus {
+            background-color: color($tertiary, 70);
+            color: color($tertiary, 160);
+
+            >svg {
+                color: color($tertiary, 160);
             }
 
         }

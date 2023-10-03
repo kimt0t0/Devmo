@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-    defineProps<{
-        title: string;
-        color?: string;
-    }>();
+defineProps<{
+    title: string;
+    color?: string;
+}>();
 </script>
 
 <template>
@@ -15,28 +15,31 @@
 </template>
 
 <style lang="scss">
-    @import '@/styles/theme.scss';
+@import '@/styles/theme.scss';
 
-    .title-ter {
-        &.__primary {
-            color: darken($primary, 10%);
-        }
-        &.__alert {
-            color: darken($alert, 35%);
-        }
-        &.__danger {
-            color: darken($danger, 30%);
-        }
-        &.__secondary {
-            color: darken($secondary, 10%);
-        }
+.title-ter {
+    &.__dark {
+        color: color($dark, 50);
     }
 
-    .commitments-list {
-        padding: 0;
-        list-style-type: none;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+    &.__neutral {
+        color: color($neutral, 25);
     }
+
+    &.__secondary {
+        color: color($secondary, 30);
+    }
+
+    &.__tertiary {
+        color: color($tertiary, 70);
+    }
+}
+
+.commitments-list {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 </style>

@@ -2,7 +2,6 @@
 import { ArrowUpIcon, ArrowLeftIcon } from '@heroicons/vue/24/outline';
 defineProps<{
     anchor: string;
-    title: string;
     text: string;
     color?: string;
 }>();
@@ -10,8 +9,7 @@ defineProps<{
 
 <template>
     <div class="backlinks-group">
-        <ButtonLinkParticle class="backlink" path="/" name="Go back to Home Page" :color="color ? color : 'secondary'"
-            size="small">
+        <ButtonLinkParticle class="backlink" path="/" name="Back to Home" :color="color ? color : 'secondary'" size="small">
             <ArrowLeftIcon :class="'backlink-icon __' + color" />
         </ButtonLinkParticle>
         <ButtonLinkParticle class="backlink" :path="anchor" :name="text" :color="color ? color : 'secondary'" size="small">
@@ -26,11 +24,10 @@ defineProps<{
 .backlinks-group {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    margin: $space-xl 0;
+    margin: $space-s 0 $space-xxl;
 
     .backlink {
-        margin: $space-s 0;
+        margin: 0 $space-s;
     }
 
     .backlink-icon {
@@ -47,12 +44,33 @@ defineProps<{
             color: color($danger, 50);
         }
 
+        &.__dark {
+            color: color($dark, 50);
+        }
+
+        &.__neutral {
+            color: color($neutral, 25);
+        }
+
         &.__primary {
             color: color($primary, 40);
         }
 
-        &.__dark {
-            color: color($dark, 50);
+        &.__secondary {
+            color: color($secondary, 30);
+        }
+
+        &.__tertiary {
+            color: color($tertiary, 70);
+        }
+    }
+
+    @media (max-width: $bp-s) {
+        flex-direction: column;
+        /* align-items: center; */
+
+        .backlink {
+            margin: $space-s 0;
         }
     }
 }

@@ -21,10 +21,10 @@ export const useNavLinksStore = defineStore('navlinks', () => {
                 name: 'Mes engagements',
                 path: '/commitments'
             },
-            {
-                name: 'Mes réalisations',
-                path: '/gallery'
-            }
+            // {
+            //     name: 'Mes réalisations',
+            //     path: '/gallery'
+            // }
         ],
         'en': [
             {
@@ -43,10 +43,10 @@ export const useNavLinksStore = defineStore('navlinks', () => {
                 name: 'Commitments',
                 path: '/commitments'
             },
-            {
-                name: 'My Work',
-                path: '/gallery'
-            }
+            // {
+            //     name: 'My Work',
+            //     path: '/gallery'
+            // }
         ],
     };
 

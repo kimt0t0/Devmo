@@ -22,26 +22,19 @@ defineProps<{
 @import '@/styles/theme.scss';
 
 .index-list {
-    box-sizing: border-box;
-    list-style-type: none;
-    padding: 0 $space-l;
-    width: 100%;
-    border-radius: $radius-s;
-    border: 5px dotted color($danger, 55);
+    display: flex;
 
-    @media (min-width: $bp-s) {
-        width: fit-content;
+    @media (max-width: $bp-s) {
+        flex-direction: column;
+        align-items: center;
     }
 
     .index-item {
-        margin: $space-m 0;
-    }
+        margin: 0 $space-s;
 
-    .ii-icon {
-        width: $txt-s;
-        height: $txt-s;
-        margin-right: $space-s;
-        color: color($danger, 55);
+        @media (max-width: $bp-s) {
+            margin: $space-m 0;
+        }
     }
 }
 </style>
