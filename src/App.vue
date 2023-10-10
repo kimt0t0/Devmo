@@ -22,7 +22,7 @@ import LegalsComponent from './components/footer/LegalsComponent.vue';
 
 .main {
   min-height: 800px;
-  padding: 240px 0 0;
+  padding: 140px 0 80px;
   position: relative;
 }
 </style>

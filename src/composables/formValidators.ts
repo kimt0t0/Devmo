@@ -1,32 +1,40 @@
 export function useValidators() {
 
-    const regNames = /[a-zA-Z]+'/;
-    // const regTopic
-    // const regMessage
+    const regNames = /^[\wéêèàùô\-\']+$/;
+    const regTopic = /^[\wéêèàùô\-\'\s]+$/;
+
+    const validateInput = (input: string, regex: RegExp): boolean => {
+        return regex.test(input);
+    };
 
     const validateFirstName = (firstName: string): boolean => {
-        if (regNames.test(firstName) && firstName.length > 3 && firstName.length < 40) {
-            return true;
-        }
-        return false;
-    };
+        let isValid = validateInput(firstName, regNames);
+        isValid ?
+            console.log('- Prénom valide')
+            :
+            console.log('- Prénom invalide');
+        return isValid;
+    }
 
     const validateLastName = (lastName: string): boolean => {
-        if (regNames.test(lastName) && lastName.length > 3 && lastName.length < 40) {
-            return true;
-        }
-        return false;
-    };
+        let isValid = validateInput(lastName, regNames);
+        isValid ?
+            console.log('- Nom valide')
+            :
+            console.log('- Nom invalide');
+        return isValid;
+    }
 
     const validateTopic = (topic: string): boolean => {
-        return false
-    };
+        let isValid = validateInput(topic, regTopic);
+        isValid ?
+            console.log('- Sujet valide')
+            :
+            console.log('- Sujet invalide');
+        return isValid;
+    }
 
-    const validateMessage = (message: string): boolean => {
-        return false
-    };
-
-    const validateHoney = (honey: string|undefined): boolean => {
+    const validateHoney = (honey: string | undefined): boolean => {
         if (honey === undefined) {
             return true;
         }
@@ -37,7 +45,6 @@ export function useValidators() {
         validateFirstName,
         validateLastName,
         validateTopic,
-        validateMessage,
         validateHoney
     }
 }

@@ -11,7 +11,6 @@ defineProps<{
 <template>
     <div :class="'hero-particle __' + color">
         <div class="classic-container hero-container">
-            <TagParticle title="Open To Work" color="neutral" />
             <div class="hero-title-container">
                 <div class="hero-decorator"></div>
                 <div class="hero-title-contents">
