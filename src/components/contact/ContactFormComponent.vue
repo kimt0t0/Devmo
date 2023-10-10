@@ -42,7 +42,63 @@ const validateFormData = (): void => {
             <div class="separator-container">
                 <div class="contact-separator"></div>
             </div>
-            <form class="contact-form">
+            <!-- French form -->
+            <form class="contact-form" v-if="useLanguageStore().language === Language.FR">
+
+                <div class="cf-line">
+                    <div class="cf-group">
+                        <label class="cf-label" for="first-name">Prénom :</label>
+                        <input type="text" v-model="formData.firstName" class="cf-input" id="first-name" name="first-name"
+                            placeholder="Mathieu" />
+                    </div>
+                    <div class="cf-group">
+                        <label class="cf-label" for="last-name">Nom :</label>
+                        <input type="text" v-model="formData.lastName" class="cf-input" id="last-name" name="last-name"
+                            placeholder="Nebra" />
+                    </div>
+                </div>
+
+                <div class="cf-line">
+                    <div class="cf-group">
+                        <label class="cf-label" for="topic">Sujet :</label>
+                        <input type="text" v-model="formData.topic" class="cf-input" id="topic" name="topic"
+                            placeholder="Proposition de projet" />
+                    </div>
+                </div>
+
+                <div class="cf-line __honey">
+                    <div class="cf-group__honey">
+                        <label class="cf-label__honey" for="honey">Pot de miel ?</label>
+                        <input type="text" class="cf-input __honey" v-model="formData.honey" name="honey"
+                            placeholder="Écrivez votre réponse ici" />
+                    </div>
+                </div>
+
+                <div class="cf-button-container">
+                    <ButtonParticle color="neutral" @click="validateFormData">
+                        <CheckIcon class="cfb-icon" />
+                        Valider le
+                        formulaire
+                    </ButtonParticle>
+                    <a v-if="isFormValid" target="_blank" title="Send your email to the website's owner"
+                        class="cf-buttonlink" :href="'mailto:' +
+                            devmail +
+                            '?subject=' +
+                            formData.topic +
+                            '%20---%20from%20' +
+                            formData.lastName.toUpperCase() +
+                            '%20' +
+                            formData.firstName +
+                            '&body=Write your message here'
+                            ">
+                        <EnvelopeIcon class="cfb-icon" />
+                        Envoyer un e-mail
+                    </a>
+                </div>
+            </form>
+
+            <!-- English Form -->
+            <form class="contact-form" v-else>
 
                 <div class="cf-line">
                     <div class="cf-group">
@@ -76,8 +132,7 @@ const validateFormData = (): void => {
                 <div class="cf-button-container">
                     <ButtonParticle color="neutral" @click="validateFormData">
                         <CheckIcon class="cfb-icon" />
-                        Valider le
-                        formulaire
+                        Check your form
                     </ButtonParticle>
                     <a v-if="isFormValid" target="_blank" title="Send your email to the website's owner"
                         class="cf-buttonlink" :href="'mailto:' +
