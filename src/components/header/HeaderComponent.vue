@@ -25,28 +25,29 @@ import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
     background-color: color($neutral, 60);
     width: 100%;
     box-sizing: border-box;
-    min-height: 140px;
-    padding: $space-s;
+    min-height: 100px;
+    padding: $space-xs;
 
     &::after {
         content: "";
         background-color: color($tertiary, 60);
         width: 140%;
-        height: 120px;
+        height: 60px;
         border-radius: 0 0 50% 50%;
         position: absolute;
-        top: 140px;
+        top: 120px;
         left: -20%;
         box-shadow: 0 5px 8px color($dark, 70);
 
     }
 
-    @media (max-width: $bp-m) {
-        min-height: 120px;
+    @media (max-width: $bp-xs) {
+        padding: 0;
+        border-bottom: 4px solid color($tertiary, 60);
+        box-shadow: 0 5px 8px color($dark, 70);
 
         &::after {
-            top: 120px;
-            height: 60px;
+            display: none;
         }
     }
 }
@@ -96,6 +97,10 @@ import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
 
     @media (min-width: $bp-l) {
         display: none;
+    }
+
+    @media (max-width: $bp-xs) {
+        margin-top: $space-m;
     }
 }
 

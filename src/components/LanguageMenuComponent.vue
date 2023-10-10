@@ -12,13 +12,14 @@ const toggleShowLanguageDropdown = (): void => {
 <template>
     <aside class="language-menu">
         <div class="lm-contents">
-            <button class="language-button" type="button" @click="toggleShowLanguageDropdown">
+            <button :class="showLanguageDropdown ? 'language-button active' : 'language-button'" type="button"
+                @click="toggleShowLanguageDropdown">
                 <flag :iso="useLanguageStore().language" />
             </button>
             <div class="language-dropdown" v-if="showLanguageDropdown">
                 <button class="ld-button" type="button" v-for="(lang, index) of Language" :key="index"
                     @click="useLanguageStore().setLanguage(lang)">
-                    <flag :iso="lang" /> {{ lang }}
+                    <flag :iso="lang" /> {{ lang === Language.EN ? 'EN' : lang }}
                 </button>
             </div>
         </div>
@@ -63,7 +64,7 @@ const toggleShowLanguageDropdown = (): void => {
     border-radius: $radius-circle;
     text-transform: capitalize;
     background-color: transparent;
-    border: 2px solid color($danger, 50);
+    border: 2px solid color($alert, 45);
     background-color: color($neutral, 60);
     color: color($alert, 40);
     font-size: $txt-xs;
@@ -77,8 +78,8 @@ const toggleShowLanguageDropdown = (): void => {
     }
 
     &:hover,
-    &:focus {
-        background-color: color($danger, 50);
+    &.active {
+        background-color: color($alert, 45);
         color: $light;
         box-shadow: 2px 2px 3px color($primary, 30);
     }
@@ -87,37 +88,45 @@ const toggleShowLanguageDropdown = (): void => {
 .language-dropdown {
     position: absolute;
     top: 62px;
-    right: 20px;
-    width: 80px;
+    right: 10px;
+    width: 100px;
     height: fit-content;
-    border: 1px solid color($danger, 50);
-    border-radius: $radius-s;
+    border: 1px solid color($alert, 45);
+    border-radius: $radius-l;
     overflow: hidden;
+    box-shadow: 2px 2px 3px color($primary, 45);
+
+    @media (max-width: $bp-m) {
+        border-width: 2px;
+    }
 
     .ld-button {
         box-sizing: border-box;
-        padding: $space-xs $space-s;
+        padding: $space-xs $space-m;
         width: 100%;
         height: 40px;
         display: flex;
         align-items: center;
         border: 1px solid transparent;
-        border-bottom: 1px solid color($danger, 50);
+        border-bottom: 1px solid color($alert, 45);
         background-color: color($neutral, 60);
-        color: color($danger, 50);
+        color: color($alert, 50);
         font-size: $txt-xs;
         text-transform: uppercase;
         cursor: pointer;
         transition: all 200ms ease-in;
 
-        &:hover,
-        &:focus {
-            background-color: color($danger, 50);
-            color: color($neutral, 60);
+        @media (max-width: $bp-m) {
+            border-width: 2px;
+        }
+
+        &:hover {
+            background-color: color($alert, 45);
+            color: color($neutral, 65);
         }
 
         .fi {
-            margin-right: $space-xs;
+            margin-right: $space-s;
             border: 1px solid color($dark, 50);
             border-radius: $radius-xs;
         }

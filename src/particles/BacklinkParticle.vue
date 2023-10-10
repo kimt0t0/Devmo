@@ -1,5 +1,9 @@
 <script lang="ts" setup>
 import { ArrowUpIcon, ArrowLeftIcon } from '@heroicons/vue/24/outline';
+import { useLanguageStore } from '@/stores/language';
+import {
+    Language
+} from '@/enums/Language';
 defineProps<{
     anchor: string;
     text: string;
@@ -9,7 +13,9 @@ defineProps<{
 
 <template>
     <div class="backlinks-group">
-        <ButtonLinkParticle class="backlink" path="/" name="Back to Home" :color="color ? color : 'secondary'" size="small">
+        <ButtonLinkParticle class="backlink" path="/"
+            :name="useLanguageStore().language === Language.FR ? 'Revenir à l\'accueil' : 'Back to Homepage'"
+            :color="color ? color : 'secondary'" size="small">
             <ArrowLeftIcon :class="'backlink-icon __' + color" />
         </ButtonLinkParticle>
         <ButtonLinkParticle class="backlink" :path="anchor" :name="text" :color="color ? color : 'secondary'" size="small">

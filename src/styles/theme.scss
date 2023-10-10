@@ -35,6 +35,10 @@ ul, ol {
     max-width: $classic-ctn;
     padding: $space-l $space-m;
     margin: 0 auto;
+
+    @media (max-width: $bp-xs) {
+        padding: $space-s $space-xs;
+    }
 }
 
 .horizontal-container {

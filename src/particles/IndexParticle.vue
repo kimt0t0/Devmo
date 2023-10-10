@@ -9,9 +9,9 @@ defineProps<{
 <template>
     <div class="classic-container">
         <ol class="index-list">
+            <EyeIcon class="ii-icon" />
             <li class="index-item" v-for="(anchor, index) of anchors" :key="index">
                 <ButtonLinkParticle :path="anchor.path" :name="anchor.title" color="danger" size="small">
-                    <EyeIcon class="ii-icon" />
                 </ButtonLinkParticle>
             </li>
         </ol>
@@ -23,10 +23,18 @@ defineProps<{
 
 .index-list {
     display: flex;
+    align-items: center;
 
     @media (max-width: $bp-s) {
         flex-direction: column;
         align-items: center;
+    }
+
+    .ii-icon {
+        width: $txt-m;
+        height: $txt-m;
+        color: color($danger, 55);
+        margin-right: $space-s;
     }
 
     .index-item {
