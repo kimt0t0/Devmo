@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import TagParticle from './TagParticle.vue';
 
 defineProps<{
     title: string;
