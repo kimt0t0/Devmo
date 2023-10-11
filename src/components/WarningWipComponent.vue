@@ -71,8 +71,7 @@ const hideAlert = () => {
             color: darken($alert, 30%);
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             .wc-button-icon {
                 color: darken($alert, 50%);
             }

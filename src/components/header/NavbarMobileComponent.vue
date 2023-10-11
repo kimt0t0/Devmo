@@ -76,8 +76,7 @@ const navlinksEn = useNavLinksStore().navlinks.en;
         color: color($dark, 50);
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
         background-color: color($dark, 50);
 
         .nav-icon {
@@ -86,21 +85,20 @@ const navlinksEn = useNavLinksStore().navlinks.en;
     }
 
     &.__contact {
-        color: color($danger, 50);
-        border: 2px solid color($danger, 50);
+        color: color($alert, 45);
+        border: 2px solid color($alert, 45);
         box-shadow: 2px 2px 3px color($primary, 45);
 
         .nav-icon {
-            color: color($danger, 50);
+            color: color($alert, 50);
         }
 
-        &:hover,
-        &:focus {
-            background-color: color($danger, 50);
+        &:hover {
+            background-color: color($alert, 45);
             box-shadow: 2px 2px 3px color($primary, 30);
 
             .nav-icon {
-                color: color($neutral, 60);
+                color: color($neutral, 65);
             }
         }
     }
@@ -140,8 +138,7 @@ const navlinksEn = useNavLinksStore().navlinks.en;
             cursor: pointer;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: color($neutral, 65);
 
             .navlink {

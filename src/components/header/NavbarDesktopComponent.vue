@@ -58,16 +58,15 @@ const navlinksEn = useNavLinksStore().navlinks.en;
         .navlink-desktop {
             padding: $space-s $space-m;
             font-size: $txt-s;
-            color: color($dark, 50);
+            color: color($danger, 50);
             font-weight: 600;
             text-decoration: none;
-            border-bottom: 1px solid color($dark, 50);
+            border-bottom: 1px solid color($danger, 50);
             transition: all 300ms ease-in;
 
-            &:hover,
-            &:focus {
-                background-color: color($dark, 50);
-                color: color($neutral, 60);
+            &:hover {
+                background-color: color($danger, 50);
+                color: color($neutral, 65);
                 box-shadow: 2px 2px 3px color($primary, 45);
             }
         }

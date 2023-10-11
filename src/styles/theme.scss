@@ -163,7 +163,7 @@ ul, ol {
         color: color($danger, 50);
     }
    
-    &:hover, &:focus {
+    &:hover {
         background-color: color($danger, 50);
         .close-icon {
             color: color($danger, 80);

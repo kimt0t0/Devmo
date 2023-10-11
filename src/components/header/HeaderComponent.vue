@@ -30,7 +30,7 @@ import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
 
     &::after {
         content: "";
-        background-color: color($tertiary, 60);
+        background-color: color($neutral, 45);
         width: 140%;
         height: 60px;
         border-radius: 0 0 50% 50%;
@@ -75,9 +75,9 @@ import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
         font-size: $txt-l;
 
         .__accent {
-            color: color($tertiary, 60);
-            border-left: 4px solid color($tertiary, 60);
-            border-bottom: 4px solid color($tertiary, 60);
+            color: color($neutral, 35);
+            border-left: 4px solid color($neutral, 35);
+            border-bottom: 4px solid color($neutral, 35);
             padding-left: $space-s;
             margin-left: $space-xs;
             border-radius: $radius-xl;

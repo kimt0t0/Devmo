@@ -36,8 +36,7 @@ defineProps<{
         color: color($neutral, 25);
         transition: all 200ms ease-in;
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: color($neutral, 25);
             color: color($neutral, 65);
 
@@ -52,8 +51,7 @@ defineProps<{
         color: color($dark, 50);
         transition: all 200ms ease-in;
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: color($dark, 50);
             color: $light;
 
@@ -68,8 +66,7 @@ defineProps<{
         color: color($primary, 40);
         transition: all 200ms ease-in;
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: color($primary, 40);
             color: $light;
 
@@ -84,8 +81,7 @@ defineProps<{
         color: color($secondary, 30);
         transition: all 200ms ease-in;
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: color($secondary, 30);
             color: color($secondary, 55);
 
@@ -101,8 +97,7 @@ defineProps<{
         color: color($tertiary, 70);
         transition: all 200ms ease-in;
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: color($tertiary, 70);
             color: color($tertiary, 160);
 
@@ -118,8 +113,7 @@ defineProps<{
         color: darken($alert, 35%);
         transition: all 200ms ease-in;
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: darken($alert, 35%);
             color: $light;
 
@@ -135,8 +129,7 @@ defineProps<{
         color: color($danger, 55);
         transition: all 200ms ease-in;
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: color($danger, 55);
             color: $light;
 

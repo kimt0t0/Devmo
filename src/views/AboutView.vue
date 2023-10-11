@@ -217,8 +217,7 @@ import { CursorArrowRippleIcon } from '@heroicons/vue/24/outline';
   cursor: pointer;
   transition: all 300ms ease-in;
 
-  &:hover,
-  &:focus {
+  &:hover {
     filter: none;
   }
 }
