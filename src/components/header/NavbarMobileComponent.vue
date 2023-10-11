@@ -24,11 +24,13 @@ const navlinksEn = useNavLinksStore().navlinks.en;
                 <ol class="navmenu" v-if="showNav">
                     <li v-if="useLanguageStore().language === Language.FR" class="navitem"
                         v-for="(navlink, index) of navlinksFr" :key="index">
-                        <RouterLink class="navlink" :to="navlink.path" :name="navlink.name">{{ navlink.name }}</RouterLink>
+                        <RouterLink class="navlink" :to="navlink.path" :name="navlink.name" @click="toggleNav">{{
+                            navlink.name }}</RouterLink>
                     </li>
                     <li v-if="useLanguageStore().language === Language.EN" class="navitem"
                         v-for="(navlink, index) of navlinksEn" :key="index">
-                        <RouterLink class="navlink" :to="navlink.path" :name="navlink.name">{{ navlink.name }}</RouterLink>
+                        <RouterLink class="navlink" :to="navlink.path" :name="navlink.name" @click="toggleNav">{{
+                            navlink.name }}</RouterLink>
                     </li>
                 </ol>
             </div>
@@ -65,7 +67,7 @@ const navlinksEn = useNavLinksStore().navlinks.en;
     background-color: transparent;
     color: color($dark, 50);
     border-radius: $radius-circle;
-    border: 2px solid color($dark, 50);
+    border: 2px solid color($danger, 50);
     padding: $space-s;
     transition: all 300ms ease-in;
 
@@ -73,14 +75,14 @@ const navlinksEn = useNavLinksStore().navlinks.en;
         cursor: pointer;
         height: 1.5rem;
         width: auto;
-        color: color($dark, 50);
+        color: color($danger, 50);
     }
 
     &:hover {
-        background-color: color($dark, 50);
+        background-color: color($danger, 50);
 
         .nav-icon {
-            color: $light;
+            color: color($danger, 80);
         }
     }
 
@@ -93,7 +95,8 @@ const navlinksEn = useNavLinksStore().navlinks.en;
             color: color($alert, 50);
         }
 
-        &:hover {
+        &:hover,
+        &.router-link-active {
             background-color: color($alert, 45);
             box-shadow: 2px 2px 3px color($primary, 30);
 
@@ -111,7 +114,7 @@ const navlinksEn = useNavLinksStore().navlinks.en;
     flex-direction: column;
     width: 160px;
     padding: 0;
-    background-color: color($dark, 50);
+    background-color: color($danger, 50);
     border: 2px solid transparent;
     border-radius: $radius-s;
     color: $light;
@@ -124,27 +127,26 @@ const navlinksEn = useNavLinksStore().navlinks.en;
         box-sizing: border-box;
         width: 100%;
         height: 60px;
-        padding: $space-s $space-m;
         margin: 0;
         transition: all 200ms ease-in;
+        /* overflow: hidden; */
 
         .navlink {
+            box-sizing: border-box;
+            padding: $space-s $space-m;
             width: 100%;
             height: 100%;
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: $light;
+            color: color($danger, 85);
             cursor: pointer;
         }
 
         &:hover,
-        &.router-link-active {
-            background-color: color($neutral, 65);
-
-            .navlink {
-                color: color($dark, 50);
-            }
+        .router-link-active {
+            background-color: color($danger, 85);
+            color: color($danger, 50);
         }
     }
 }

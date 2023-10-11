@@ -43,7 +43,7 @@ import NavbarDesktopComponent from './NavbarDesktopComponent.vue';
 
     @media (max-width: $bp-xs) {
         padding: 0;
-        border-bottom: 4px solid color($tertiary, 60);
+        border-bottom: 6px solid color($neutral, 45);
         box-shadow: 0 5px 8px color($dark, 70);
 
         &::after {

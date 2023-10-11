@@ -3,7 +3,7 @@ import { useLanguageStore } from '@/stores/language';
 import { Language } from '@/enums/Language';
 import { EnvelopeIcon } from '@heroicons/vue/24/outline';
 import { useNavLinksStore } from '@/stores/navlinks';
-import { useRoutes } from '@/composables/routes';
+// import { useRoutes } from '@/composables/routes';
 
 const navlinksFr = useNavLinksStore().navlinks.fr;
 const navlinksEn = useNavLinksStore().navlinks.en;
