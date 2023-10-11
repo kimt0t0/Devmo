@@ -3,9 +3,12 @@ import { useLanguageStore } from '@/stores/language';
 import { Language } from '@/enums/Language';
 import { EnvelopeIcon } from '@heroicons/vue/24/outline';
 import { useNavLinksStore } from '@/stores/navlinks';
+import { useRoutes } from '@/composables/routes';
 
 const navlinksFr = useNavLinksStore().navlinks.fr;
 const navlinksEn = useNavLinksStore().navlinks.en;
+
+
 </script>
 
 <template>
@@ -64,7 +67,8 @@ const navlinksEn = useNavLinksStore().navlinks.en;
             border-bottom: 1px solid color($danger, 50);
             transition: all 300ms ease-in;
 
-            &:hover {
+            &:hover,
+            &.router-link-active {
                 background-color: color($danger, 50);
                 color: color($neutral, 65);
                 box-shadow: 2px 2px 3px color($primary, 45);

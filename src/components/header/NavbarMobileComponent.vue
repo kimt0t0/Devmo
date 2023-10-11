@@ -138,7 +138,8 @@ const navlinksEn = useNavLinksStore().navlinks.en;
             cursor: pointer;
         }
 
-        &:hover {
+        &:hover,
+        &.router-link-active {
             background-color: color($neutral, 65);
 
             .navlink {
