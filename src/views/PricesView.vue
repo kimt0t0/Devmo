@@ -10,65 +10,70 @@ import { CardTypes } from '@/enums/CardTypes';
 const pricesFr: CardContent[] = [
     // one-page
     {
-        title: 'Site One-Page',
-        subtitle: '200€ à 300€',
-        subtext: 'Une page unique réalisée sur mesure.',
+        title: 'Conseil, cadrage de projet aide à la conception',
+        subtitle: '50€ /1h30',
+        subtext: 'On prend rendez-vous et on en parle ? Pour anticiper, consultez la page "Me préparer" ! Rendez-vous possibles en visio-conférence ou en physique.',
         color: 'secondary'
     },
     {
-        title: 'Mise-à-jour des contenus du site',
-        subtitle: '50€ à 200€',
-        subtext: 'Demandez une mise-à-jour de vos contenus quand vous voulez, sans devoir payer un forfait mensuel.',
+        title: 'Site Vitrine avec un CMS au choix',
+        subtitle: 'à partir de 250€',
+        subtext: 'Un site vitrine avec les pages de base, utilisant un CMS de votre choix parmi WordPress, Strapi et Webflow.',
     },
     {
-        title: 'Refonte graphique',
-        subtitle: '50€ à 200€',
-        subtext: 'Redonnez un coup de neuf visuel à votre site quand vous voulez !'
+        title: 'Refonte graphique, mise-à-jour, rédaction de contenu...',
+        subtitle: 'à partir de 50€',
+        subtext: 'Redonnez un coup de neuf visuel à votre site quand vous voulez ! Prix fixé en fonction de votre demande, fixé par contrat avec un forfait fixe.'
     },
     // custom
     {
         title: 'Site-vitrine 100% sur-mesure',
-        subtitle: '500€ à 1000€',
-        subtext: '4 pages + contact, interface sur-mesure. Possibilité d\'ajouter des pages au forfait.',
+        subtitle: 'à partir de 350€',
+        subtext: '4 pages de base: accueil, à propos, conditions légales, contact.',
         color: 'tertiary'
     },
     {
-        title: 'Mise-à-jour des contenus du site',
-        subtitle: '50€ à 500€',
-        subtext: 'Demandez une mise-à-jour de vos contenus quand vous voulez, sans devoir payer un forfait mensuel.',
+        title: 'Refonte graphique, mise-à-jour, rédaction de contenu...',
+        subtitle: 'à partir de 50€',
+        subtext: 'Redonnez un coup de neuf visuel à votre site quand vous voulez ! Prix fixé en fonction de votre demande, fixé par contrat avec un forfait fixe.',
     },
     {
-        title: 'Refonte graphique',
-        subtitle: '50€ à 600€',
-        subtext: 'Redonnez un coup de neuf visuel à votre site quand vous voulez !'
+        title: 'Site full-stack 100% sur-mesure',
+        subtitle: 'à partir de 600€',
+        subtext: '8 pages de base: accueil, connexion, inscription, identifiants oubliés, mon compte, à propos, conditions légales, contact'
     },
     // e-commerce
     {
         title: 'Site e-commerce clés-en-main',
-        subtitle: '800€ à 1 200€',
-        subtext: 'Un site de vente en ligne sécurisé grâce à un CMS spécialisé avec son interface graphique réalisée sur-mesure.',
+        subtitle: 'à partir de 350€',
+        subtext: 'Un site de vente en ligne sécurisé grâce à un CMS spécialisé (PrestaShop, Shopify) avec un thème graphique officiel de la plateforme.',
         color: 'alert'
     },
     {
-        title: 'Mise-à-jour des contenus du site',
-        subtitle: '50€ à 500€',
-        subtext: 'Demandez une mise-à-jour de vos contenus quand vous voulez, sans devoir payer un forfait mensuel.',
+        title: 'Site e-commece clés-en-main avec interface 100% sur-mesure',
+        subtitle: 'à partir de 500€',
+        subtext: 'Tous les avantages du site e-commence clés-en-main, avec une interface graphique codée sur-mesure !'
     },
     {
-        title: 'Refonte graphique',
-        subtitle: '50€ à 600€',
-        subtext: 'Redonnez un coup de neuf visuel à votre site quand vous voulez !'
+        title: 'Mise-à-jour des contenus du site',
+        subtitle: 'à partir de 50€',
+        subtext: 'Demandez une mise-à-jour de vos contenus quand vous voulez !',
     },
     // improvements
     {
-        title: 'Réferencement & Accessibilité',
-        subtitle: '50€ à 400€',
-        subtext: 'Améliorez le référencement et/ou l\'accessibilité de votre site web par l\'utilisation du HTML sémantique, la qualité de vos contenus et le respect des bonnes pratiques web.',
+        title: 'Maintenance sur un site existant',
+        subtitle: 'à partir de 50€',
+        subtext: 'Pensez à la sécurité et à la modernité de votre site: je réalise les opérations de maintenance courantes sur votre site (sauvegarde de données, mise-à-jour, revue du paramétrage...).',
         color: 'secondary'
     },
     {
-        title: 'Rédaction de contenus & Traductions',
-        subtitle: '50€ à 200€',
+        title: 'Réferencement & Accessibilité',
+        subtitle: 'à partir de 100€',
+        subtext: 'Améliorez le référencement et/ou l\'accessibilité de votre site web ! Je m\'assure de la qualité de vos contenus et du respect des bonnes pratiques du web.',
+    },
+    {
+        title: 'Rédaction & Traduction',
+        subtitle: 'à partir de 50€',
         subtext: 'Besoin d\'aide pour rédiger vos contenus ? D\'une traduction français/anglais ? Je suis aussi diplômé·e en langues et cultures étrangères !'
     }
 ]
@@ -76,84 +81,89 @@ const pricesFr: CardContent[] = [
 const pricesEn: CardContent[] = [
     // one-page
     {
-        title: 'One-Page Website',
-        subtitle: '200€ à 300€',
-        subtext: 'A unique and customized page.',
+        title: 'Advice and guidance on your project',
+        subtitle: '50€ / 1h30',
+        subtext: 'Let\'s meet and talk ! You may visit the "Get Ready" section of this website to make ready. Available online or IRL.',
         color: 'secondary'
     },
     {
-        title: 'Update Contents',
-        subtitle: '50€ à 200€',
-        subtext: 'Ask a contents update whenever you want. Pay-as-you-need, no monthly subscription !',
+        title: 'Showcase website with a chosen CDN',
+        subtitle: 'from 250€',
+        subtext: 'Get showcase webseite with classic pages using a CDN like WordPress, Strapi or Webflow.',
     },
     {
-        title: 'Refresh Interface Design',
-        subtitle: '50€ à 200€',
-        subtext: 'Give a fresh look to your website whenever you feel like it !'
+        title: 'Redesign, update, contents writing...',
+        subtitle: 'from 50€',
+        subtext: 'Get a fresh look for your website whenever you need ! Prices evolve according to your needs and are set with a contract and fixed billing.',
     },
     // custom
     {
-        title: '100% Custom Showcase Website',
-        subtitle: '500€ à 1000€',
-        subtext: '4 pages + contact,  customized web interface. And you can add optional pages to this package !',
+        title: '100% customized showcase website',
+        subtitle: 'from 350€',
+        subtext: '4 classic pages: landing page, about, legal notices, contact.',
         color: 'tertiary'
     },
     {
-        title: 'Update Contents',
-        subtitle: '50€ à 500€',
-        subtext: 'Ask for a contents update whenever you want. Pay-as-you-need, no monthly subscription !',
+        title: 'Redesign, update, contents writing...',
+        subtitle: 'from 50€',
+        subtext: 'Get a fresh look for your website whenever you need ! Prices evolve according to your needs and are set with a contract and fixed billing.',
     },
     {
-        title: 'Refresh Interface Design',
-        subtitle: '50€ à 600€',
-        subtext: 'Give a fresh look to your website whenever you feel like it !'
+        title: '100% customized full-stack website',
+        subtitle: 'from 600€',
+        subtext: '8 classic pages: landing page, login, signup, forgotten credentials, my account, about, legal notices, contact.'
     },
     // e-commerce
     {
-        title: 'Ready-to-use E-shop',
-        subtitle: '800€ à 1 200€',
-        subtext: 'Un site de vente en ligne sécurisé grâce à un CMS spécialisé avec son interface graphique réalisée sur-mesure.',
+        title: 'Ready-to-use e-commerce',
+        subtitle: 'from 350€',
+        subtext: 'A secured online sales website relying on a specialized CDN like PrestaShop or Shopify. You\'ll get an official design from the platform !',
         color: 'alert'
     },
     {
-        title: 'Update Contents',
-        subtitle: '50€ à 500€',
-        subtext: 'Ask for a contents update whenever you want. Pay-as-you-need, no monthly subscription !',
+        title: '100% customized ready-to-use e-commerce',
+        subtitle: 'from 500€',
+        subtext: 'All the pros of a ready-to-use e-commerce website, adding a 100% custom-made design.'
     },
     {
-        title: 'Refresh Interface Design',
-        subtitle: '50€ à 600€',
-        subtext: 'Give a fresh look to your website whenever you feel like it !'
+        title: 'Contents update',
+        subtitle: 'from 50€',
+        subtext: 'Get a contents update whenever you want !',
     },
     // improvements
     {
-        title: 'Accessibility and SEO',
-        subtitle: '50€ à 400€',
-        subtext: 'Improve your SEO and/or accessibility with semantic HTML, contents quality and good practices.',
+        title: 'Maintainance on an existing website',
+        subtitle: 'from 50€',
+        subtext: 'Increase your site\'s security and modernity with current maintenance actions: data saves, updates, parameters review...',
         color: 'secondary'
     },
     {
-        title: 'Contents Writing & Translations',
-        subtitle: '50€ à 200€',
-        subtext: 'Need help to write your contents or a French/English translation ? I also graduated in an English literature and history curriculum at University !'
+        title: 'SEO & Accessibility',
+        subtitle: 'from 100€',
+        subtext: 'Improve your website\'s SEO and/or accessibility ! I take care of your contents\' quality and check the web good practices.',
+    },
+    {
+        title: 'Writing & Translations',
+        subtitle: 'from 50€',
+        subtext: 'Do you need help to write your online contents ? A French / English translation ? I also have an academic master degree in English history, culture and literature !'
     }
 ]
 
 // Conditions
 const conditionsFr: string[] = [
-    'Ces tarifs sont susceptibles d\'être augmentés par l\'achat d\'un nom de domaine, de plugins ou de fonctionnalités selon vos demandes.',
-    'Chaque page ajoutée en plus des pages prévues dans le forfait ajoute un coût à ce forfait.',
-    'Je prends le temps d\'échanger et identifier vos besoins avant le démarrage de chaque pour anticiper ces coûts et éviter les mauvaises surprises.',
-    'Le démarrage d\'un projet (design, code) est conditionné au versement d\'un acompte de 30% de votre forfait.',
+    'Vous pouvez ajouter des pages aux forfaits de base: le prix varie selon la complexité de votre demande (nombre de pages, fonctionnalités...).',
+    'Un rendez-vous de conseil et cadrage préalable à l\'établissement de votre contrat est offert avec chaque forfait. Si votre projet est peu défini, vous aurez peut-être besoin de plusieurs de ces rendez-vous: ils seront dans ce cas ajoutés à votre facture. Vous en serez toujours informé·e·s préalablement.',
+    'L\'achat d\'un nom de domaine, d\'un hébergement et de fonctionnalités supplémentaires chez votre hébergeur, etc restent à votre charge.',
+    'Le démarrage d\'un projet (design, code) est conditionné au versement d\'un acompte de 35% de la facture établie le jour de la signature du contrat.',
     'En cas de problème dont je serais responsable sur votre site, les rectifications sont évidemment gratuites.'
 ]
 
 const conditionsEn: string[] = [
-    'Pricing might be increased if you need to buy a domain name, plugins or features, depending on your project\'s needs.',
-    'Any additional page that is not included in the initial package may result in a price raise.',
-    'Let\'s take the time to tchat and identify your needs before coding. Thus we can anticipate costs and avoid unpleasant surprises.',
-    'I start coding with a deposit of 30% of your package.',
-    'If there is any issue I am accountable for on your website, fixes are free.'
+    'You can get additional pages with your package. Prices evolve according to you project\'s technical details.',
+    'A free guidance-and-advice meeting is included in every package. If your project is a bit blurry, you may need more than one of those meetings. Those will be billed additionally. I will inform you previously.',
+    'You are financially and legally responsible for the domain name, hosting and additional functionalities with your hosting service.',
+    'Coding starts when you pay a deposit of 35% of the bill edited with your contract.',
+    'If there is any issue I am accountable for on your website, fixes are obviously free.'
 ]
 
 </script>
