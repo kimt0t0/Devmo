@@ -19,7 +19,8 @@ import { CursorArrowRippleIcon } from '@heroicons/vue/24/outline';
             Salutations ! Âgé·e de 30 ans, non-binaire (il / iel) et neuro-atypique, je suis <strong>développeur·e
               web</strong> depuis
             environ un
-            an.<br />Après
+            an et titulaire du titre professionnel de <strong>concepteur développeur d'applications</strong>.</p>
+          <p>Après
             une
             expérience en agence, je crée ma propre entreprise afin de travailler de la façon qui me convient et de
             pouvoir
@@ -27,7 +28,7 @@ import { CursorArrowRippleIcon } from '@heroicons/vue/24/outline';
           </p>
           <ul class="about-list">
             <li class="al-item">
-              Pour des <strong>petites / moyennes entreprises, associations ou
+              Pour des <strong>TPE, auto-entrepreneurs, associations ou
                 particuliers.</strong>
             </li>
             <li class="al-item">
@@ -76,13 +77,15 @@ import { CursorArrowRippleIcon } from '@heroicons/vue/24/outline';
         <div class="about-content">
           <p class="about-text __me">
             Hi ! I am 30 years-old, non-binary (he / they ) and neuro-atypical and I've been working as a <strong>web
-              developer</strong> for about a year now.
-            <br />After a job at a web agency, I am starting my own business. I want to work in ways that fit me better
+              developer</strong> for about a year now. I also validated the French professional certificate
+            <strong>applications designer and developer</strong>.
+          </p>
+          <p>After a job at a web agency, I am starting my own business. I want to work in ways that fit me better
             and choose projects I enjoy more:
           </p>
           <ul class="about-list">
             <li class="al-item">With
-              <strong>small / medium size businesses, charitable organizations or
+              <strong>small / medium size businesses, self-employed people, charitable organizations or
                 individuals.</strong>
             </li>
             <li class="al-item">
