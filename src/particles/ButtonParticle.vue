@@ -2,11 +2,15 @@
 defineProps<{
     color?: string;
     size?: string;
+    animation?: {
+        type: 'animation' | '',
+        default: 'animation'
+    };
 }>();
 </script>
 
 <template>
-    <button type="button" :class="'button-particle __' + color + ' __' + size">
+    <button type="button" :class="'button-particle __' + color + ' __' + size + '__' + animation">
         <slot></slot>
     </button>
 </template>
@@ -48,9 +52,13 @@ defineProps<{
         color: color($danger, 85);
         background-color: color($danger, 50);
         box-shadow: 2px 2px 3px color($primary, 20);
+    }
 
-        >svg {
-            transform: rotate(-360deg);
+    &.__animation {
+        &:hover {
+            >svg {
+                transform: rotate(-360deg);
+            }
         }
     }
 
