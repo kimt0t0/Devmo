@@ -1,5 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-    <h2 class="get-ready-section-title">Général</h2>
+    <div class="classic-section get-ready-form-section">
+        <SectionTitleParticle title="Cadrage général" />
+    </div>
 </template>
+
+<style lang="scss">
+@use '@/styles/theme.scss' as *;
+</style>
