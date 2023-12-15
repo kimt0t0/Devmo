@@ -9,52 +9,6 @@ import GetReadyStructureComponent from '@/components/get-ready/GetReadyStructure
 import GetReadyDetailsComponent from '@/components/get-ready/GetReadyDetailsComponent.vue';
 import GetReadySummaryComponent from '@/components/get-ready/GetReadySummaryComponent.vue';
 
-// set selected form section
-const setSelectedFormSection = (sectionName: GetReadyFormSections): void => {
-
-}
-
-// select previous section
-const selectPreviousSection = (): void => {
-    switch (useGetReadyStore().selectedFormSection) {
-        case GetReadyFormSections.GENERAL:
-            console.error(`Ce comportement n'est pas prévu par l'application.`);
-            break;
-        case GetReadyFormSections.STRUCTURE:
-            useGetReadyStore().setSelectedFormSection(GetReadyFormSections.GENERAL);
-            break;
-        case GetReadyFormSections.DETAILS:
-            useGetReadyStore().setSelectedFormSection(GetReadyFormSections.STRUCTURE);
-            break;
-        case GetReadyFormSections.SUMMARY:
-            useGetReadyStore().setSelectedFormSection(GetReadyFormSections.DETAILS);
-            break;
-        default:
-            useGetReadyStore().setSelectedFormSection(GetReadyFormSections.GENERAL);
-            break;
-    }
-};
-
-// select previous section
-const selectNextSection = (): void => {
-    switch (useGetReadyStore().selectedFormSection) {
-        case GetReadyFormSections.GENERAL:
-            useGetReadyStore().setSelectedFormSection(GetReadyFormSections.STRUCTURE);
-            break;
-        case GetReadyFormSections.STRUCTURE:
-            useGetReadyStore().setSelectedFormSection(GetReadyFormSections.DETAILS);
-            break;
-        case GetReadyFormSections.DETAILS:
-            useGetReadyStore().setSelectedFormSection(GetReadyFormSections.SUMMARY);
-            break;
-        case GetReadyFormSections.SUMMARY:
-            console.error(`Ce comportement n'est pas prévu par l'application.`);
-            break;
-        default:
-            useGetReadyStore().setSelectedFormSection(GetReadyFormSections.GENERAL);
-            break;
-    }
-};
 </script>
 
 <template>
@@ -124,38 +78,43 @@ const selectNextSection = (): void => {
                 <!-- Form navigation -->
                 <div class="get-ready-form-nav">
                     <!-- previous button -->
-                    <ButtonParticle animation='' @click="selectPreviousSection"
+                    <ButtonParticle animation='' @click="useGetReadyStore().selectPreviousSection()"
                         :disabled="useGetReadyStore().selectedFormSection === GetReadyFormSections.GENERAL">
                         <ArrowLeftIcon />
                     </ButtonParticle>
                     <!-- follow steps bar -->
                     <div class="follow-steps-bar">
                         <div class="fsb-item"
-                            :style="useGetReadyStore().selectedFormSection === GetReadyFormSections.GENERAL ? { backgroundColor: '#E25E3E' } : { backgroundColor: 'transparent' }">
+                            :style="useGetReadyStore().formProgress >= 0 ? { backgroundColor: '#E25E3E' } : { backgroundColor: 'transparent' }">
                         </div>
                         <div class="fsb-item"
-                            :style="useGetReadyStore().selectedFormSection === GetReadyFormSections.STRUCTURE ? { backgroundColor: '#E25E3E' } : { backgroundColor: 'transparent' }">
+                            :style="useGetReadyStore().formProgress > 0 ? { backgroundColor: '#E25E3E' } : { backgroundColor: 'transparent' }">
                         </div>
                         <div class="fsb-item"
-                            :style="useGetReadyStore().selectedFormSection === GetReadyFormSections.DETAILS ? { backgroundColor: '#E25E3E' } : { backgroundColor: 'transparent' }">
+                            :style="useGetReadyStore().formProgress > 1 ? { backgroundColor: '#E25E3E' } : { backgroundColor: 'transparent' }">
                         </div>
                         <div class="fsb-item"
-                            :style="useGetReadyStore().selectedFormSection === GetReadyFormSections.SUMMARY ? { backgroundColor: '#E25E3E' } : { backgroundColor: 'transparent' }">
+                            :style="useGetReadyStore().formProgress > 2 ? { backgroundColor: '#E25E3E' } : { backgroundColor: 'transparent' }">
                         </div>
                     </div>
                     <!-- next button -->
-                    <ButtonParticle @click="selectNextSection" animation=''
+                    <ButtonParticle @click="useGetReadyStore().selectNextSection()" animation=''
                         :disabled="useGetReadyStore().selectedFormSection === GetReadyFormSections.SUMMARY">
                         <ArrowRightIcon />
                     </ButtonParticle>
                 </div>
                 <!-- Form contents -->
-                <GetReadyGeneralComponent v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.GENERAL" />
+                <p :style="{ textAlign: 'center' }"><strong>Attention: Le contenu de ce formulaire est encore en construction.
+                        Il sera utilisable dans
+                        quelques jours !</strong></p>
+                <GetReadyGeneralComponent
+                    v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.GENERAL" />
                 <GetReadyStructureComponent
                     v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.STRUCTURE" />
-                <GetReadyDetailsComponent v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.DETAILS" />
-                <GetReadySummaryComponent v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.SUMMARY" />
-                <p>Le contenu de ce formulaire est encore en construction. Il sera utilisable dans quelques jours !</p>
+                <GetReadyDetailsComponent
+                    v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.DETAILS" />
+                <GetReadySummaryComponent
+                    v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.SUMMARY" />
             </div>
         </div>
     </section>
@@ -175,6 +134,7 @@ const selectNextSection = (): void => {
 .get-ready-form-container {
     background-color: color($alert, 70);
     padding: 80px 0;
+    margin-top: $space-xl;
     position: relative;
 
     .grfc-decorator {
@@ -186,16 +146,76 @@ const selectNextSection = (): void => {
 
         &.__left {
             background-color: color($neutral, 60);
-            top: -120px;
-            left: 10%;
+            top: -140px;
+            left: 10.5%;
             transform: rotate(3deg);
         }
 
         &.__right {
             background-color: color($alert, 70);
-            top: -80px;
-            right: 10%;
-            transform: rotate(3deg);
+            top: -100px;
+            right: 10.5%;
+            transform: rotate(-4deg);
+        }
+
+        @media (max-width: 1100px) {
+            height: 160px;
+
+            &.__left {
+                top: -111px;
+            }
+
+            &.__right {
+                top: -79px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            height: 120px;
+
+            &.__left {
+                top: -83.5px;
+            }
+
+            &.__right {
+                top: -59px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            height: 90px;
+
+            &.__left {
+                top: -63px;
+            }
+
+            &.__right {
+                top: -44px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            height: 60px;
+
+            &.__left {
+                top: -34px;
+            }
+
+            &.__right {
+                top: -23.5px;
+            }
+        }
+
+        @media (max-width: 280px) {
+            height: 40px;
+
+            &.__left {
+                top: -22px;
+            }
+
+            &.__right {
+                top: -16px;
+            }
         }
     }
 }
@@ -265,5 +285,4 @@ const selectNextSection = (): void => {
             transition: all 300ms ease-in;
         }
     }
-}
-</style>
+}</style>

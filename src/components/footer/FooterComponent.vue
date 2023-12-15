@@ -78,7 +78,7 @@ import { Language } from '@/enums/Language';
 
     &:hover {
         background-color: color($danger, 50);
-        color: color($neutral, 55);
+        color: color($neutral, 70);
     }
 }
 </style>

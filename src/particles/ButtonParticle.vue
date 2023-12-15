@@ -2,6 +2,10 @@
 defineProps<{
     color?: string;
     size?: string;
+    type?: {
+        type: 'button' | 'submit' | 'reset' | undefined;
+        default: 'button'
+    };
     animation?: {
         type: 'animation' | '',
         default: 'animation'
@@ -10,7 +14,7 @@ defineProps<{
 </script>
 
 <template>
-    <button type="button" :class="'button-particle __' + color + ' __' + size + '__' + animation">
+    <button :type=type :class="'button-particle __' + color + ' __' + size + '__' + animation">
         <slot></slot>
     </button>
 </template>

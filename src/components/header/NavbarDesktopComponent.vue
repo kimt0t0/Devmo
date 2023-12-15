@@ -67,6 +67,10 @@ const navlinksEn = useNavLinksStore().navlinks.en;
             border-bottom: 1px solid color($danger, 50);
             transition: all 300ms ease-in;
 
+            @media(max-width: 1100px) {
+                font-size: $txt-xs;
+            }
+
             &:hover,
             &.router-link-active {
                 background-color: color($danger, 50);
