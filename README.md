@@ -79,6 +79,14 @@ npm run lint
 [Heroicons](https://heroicons.com/)
 [FlagIcons](https://www.npmjs.com/package/vue-flag-icon)
 
+### Form label + input template
+If you are willing to work on forms in this project, you can directly copy and paste this template in components templates. Do not forget to import necessary items (language store, language enum, ect).
+```
+<InputGroupParticle inputName="" :label="useLanguageStore().language === Language.EN ? '' : ''">
+    <input type="" class="ig-input get-ready-input" id="" name="" v-model="generalInputs" />
+</InputGroupParticle>
+```
+
 ### Deploy an updated version
 
 Simply push commits on the #develop branch. Netlify will deploy the new version automatically.
@@ -86,5 +94,4 @@ If something doesn't work, use ```npm run build``` to debug.
 
 ## Upcoming updates
 1. New contact form
-2. Automatized and gamified quote and advice (services to offer and pricing OR advice according to users responses)
-3. Ongoing project(s)
+2. Ongoing project(s)

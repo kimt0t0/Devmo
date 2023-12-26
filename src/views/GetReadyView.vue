@@ -104,17 +104,15 @@ import GetReadySummaryComponent from '@/components/get-ready/GetReadySummaryComp
                     </ButtonParticle>
                 </div>
                 <!-- Form contents -->
-                <p :style="{ textAlign: 'center' }"><strong>Attention: Le contenu de ce formulaire est encore en construction.
+                <p :style="{ textAlign: 'center' }"><strong>Attention: Le contenu de ce formulaire est encore en
+                        construction.
                         Il sera utilisable dans
                         quelques jours !</strong></p>
-                <GetReadyGeneralComponent
-                    v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.GENERAL" />
+                <GetReadyGeneralComponent v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.GENERAL" />
                 <GetReadyStructureComponent
                     v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.STRUCTURE" />
-                <GetReadyDetailsComponent
-                    v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.DETAILS" />
-                <GetReadySummaryComponent
-                    v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.SUMMARY" />
+                <GetReadyDetailsComponent v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.DETAILS" />
+                <GetReadySummaryComponent v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.SUMMARY" />
             </div>
         </div>
     </section>
@@ -285,4 +283,5 @@ import GetReadySummaryComponent from '@/components/get-ready/GetReadySummaryComp
             transition: all 300ms ease-in;
         }
     }
-}</style>
+}
+</style>

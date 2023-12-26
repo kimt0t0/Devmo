@@ -14,6 +14,7 @@ import HeroParticle from '@/particles/HeroParticle.vue';
 import IndexParticle from '@/particles/IndexParticle.vue';
 import InputGroupParticle from './particles/InputGroupParticle.vue';
 import LineSeparatorParticle from '@/particles/LineSeparatorParticle.vue';
+import RadioGroupParticle from './particles/RadioGroupParticle.vue';
 import SectionTitleParticle from '@/particles/SectionTitleParticle.vue';
 
 const app = createApp(App)
@@ -31,6 +32,7 @@ app
     .component('IndexParticle', IndexParticle)
     .component('InputGroupParticle', InputGroupParticle)
     .component('LineSeparatorParticle', LineSeparatorParticle)
+    .component('RadioGroupParticle', RadioGroupParticle)
     .component('SectionTitleParticle', SectionTitleParticle)
 
 app.mount('#app')
