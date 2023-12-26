@@ -3,7 +3,7 @@ export interface GetReadyStructureInputs {
     userAccounts?: boolean;
     onlineSells?: boolean;
     contents?: string;
-    advanced?: string; // 'yes', 'no' or 'null'
+    advanced?: boolean;
     advancedDetails?: string;
     adminPannel?: boolean;
 }
