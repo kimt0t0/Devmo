@@ -2,10 +2,7 @@
 defineProps<{
     color?: string;
     size?: string;
-    type?: {
-        type: 'button' | 'submit' | 'reset' | undefined;
-        default: 'button'
-    };
+    type?: 'button' | 'submit' | 'reset' | undefined,
     animation?: {
         type: 'animation' | '',
         default: 'animation'
@@ -14,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-    <button :type=type :class="'button-particle __' + color + ' __' + size + '__' + animation">
+    <button :type=type :class="'button-particle __' + color + ' __' + size + ' __' + animation">
         <slot></slot>
     </button>
 </template>
@@ -78,6 +75,48 @@ defineProps<{
             border-color: color($neutral, 25);
             box-shadow: 2px 2px 2px color($primary, 15);
         }
+    }
+
+    &.__alert {
+        color: color($alert, 40);
+        background-color: transparent;
+        border-color: color($alert, 45);
+        box-shadow: 2px 2px 2px color($primary, 45);
+
+        &:hover {
+            color: color($alert, 68);
+            background-color: color($alert, 40);
+            border-color: color($alert, 40);
+            box-shadow: 2px 2px 2px color($primary, 40);
+        }
+    }
+
+    &.__dark {
+        color: color($dark, 50);
+        background-color: transparent;
+        border-color: color($dark, 55);
+        box-shadow: 2px 2px 2px color($dark, 55);
+
+        &:hover {
+            color: color($dark, 110);
+            background-color: color($dark, 50);
+            border-color: color($dark, 50);
+            box-shadow: 2px 2px 2px color($dark, 50);
+        }
+    }
+
+    &.__small {
+        min-width: 40px;
+        min-height: 40px;
+        padding: $space-xs $space-s;
+        justify-content: center;
+    }
+
+    &.__smaller {
+        min-width: initial;
+        min-height: initial;
+        padding: $space-xs;
+        height: fit-content;
     }
 
 }

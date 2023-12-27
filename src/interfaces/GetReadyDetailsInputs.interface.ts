@@ -6,7 +6,7 @@ export interface GetReadyDetailsInputs {
             title: string;
             summary?: string,
             contents?: string,
-            priority?: number
+            priority?: 1 | 2 | 3
         }[]
     }[],
     header?: string

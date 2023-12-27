@@ -17,7 +17,14 @@ export const useGetReadyStore = defineStore('get-ready', () => {
     const getReadySummary = reactive<any>({
         general: {},
         structure: {},
-        details: {}
+        details: {
+            pagesList: [
+                {
+                    title: 'Titre de la page',
+                    sections: [{ title: 'Titre de la section' }]
+                }
+            ]
+        }
     });
 
     // METHODS

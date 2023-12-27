@@ -284,4 +284,19 @@ import GetReadySummaryComponent from '@/components/get-ready/GetReadySummaryComp
         }
     }
 }
+
+/* Global elements styling */
+
+.get-ready-subsection-title {
+    margin: 0;
+}
+
+.get-ready-subsection-text {
+    font-size: $txt-xs;
+    margin: 0;
+}
+
+.get-ready-button-container {
+    padding: $space-s 0 $space-l;
+}
 </style>

@@ -2,13 +2,14 @@
 defineProps<{
     inputName: string;
     label: string;
+    style?: string; //add 'button-like' if needed
 }>()
 </script>
 
 <template>
     <div class="radio-group">
         <slot></slot>
-        <label class="radio-label" :for="inputName">{{ label }}</label>
+        <label :class="'radio-label __' + style" :for="inputName">{{ label }}</label>
     </div>
 </template>
 
