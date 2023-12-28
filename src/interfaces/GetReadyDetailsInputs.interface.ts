@@ -2,7 +2,7 @@ export interface GetReadyDetailsInputs {
     pagesList?: {
         title: string,
         summary?: string,
-        sections?: {
+        sections: {
             title: string;
             summary?: string,
             contents?: string,

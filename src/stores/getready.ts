@@ -31,7 +31,7 @@ export const useGetReadyStore = defineStore('get-ready', () => {
 
     // follow form progress
     const incrementFormProgress = (): void => {
-        if (formProgress.value < 3) formProgress.value++;
+        if (formProgress.value < 2) formProgress.value++;
     };
 
     const decrementFormProgress = (): void => {

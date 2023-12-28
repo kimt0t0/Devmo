@@ -7,7 +7,6 @@ import { GetReadyFormSections } from '@/enums/GetReadyFormSections';
 import GetReadyGeneralComponent from '@/components/get-ready/GetReadyGeneralComponent.vue';
 import GetReadyStructureComponent from '@/components/get-ready/GetReadyStructureComponent.vue';
 import GetReadyDetailsComponent from '@/components/get-ready/GetReadyDetailsComponent.vue';
-import GetReadySummaryComponent from '@/components/get-ready/GetReadySummaryComponent.vue';
 
 </script>
 
@@ -28,16 +27,16 @@ import GetReadySummaryComponent from '@/components/get-ready/GetReadySummaryComp
                     full process.
                 </p>
                 <p class="classic-text">Unfortunately, for financial reasons <strong>this website doesn't allow you to
-                        save your progress (yet).</strong> If you need to split this task in multiple sessions, <strong>you
+                        save your progress (yet). But you can save a PDF on your computer when you're finished !</strong> If
+                    you need to split this task in multiple sessions, <strong>you
                         may
                         simply take notes</strong> on
                     your
-                    own. Then if you are willing to work with me <RouterLink to="/contact" class="classic-link">you can
+                    own.</p>
+                <p class="classic-text">Then ultimately, if you are willing to work with me, <RouterLink to="/contact"
+                        class="classic-link">you can
                         email it
                         to me</RouterLink> in the format that best suits you.
-                    <strong>Otherwise, no need to take notes:</strong> you will be able to send me a complete document at
-                    the
-                    end of this form.
                 </p>
                 <p class="classic-text"><strong>If this task is difficult for you, just do what you can and I will help
                         you with the remainder !</strong> It's perfectly normal if you don't have all the answers yet.</p>
@@ -51,16 +50,15 @@ import GetReadySummaryComponent from '@/components/get-ready/GetReadySummaryComp
                     aurez probablement besoin de <strong>deux ou trois heures</strong> pour compléter l'ensemble.
                 </p>
                 <p class="classic-text">Pour le moment, pour des raisons financières, <strong>ce site ne permet pas
-                        (encore) de sauvegarder votre avancement.</strong> Si vous avez besoin de découper ce travail en
+                        (encore) de sauvegarder votre avancement. Mais vous pourrez enregistrer votre résultat en PDF à la
+                        fin !</strong> Si vous avez besoin de découper ce travail en
                     plusieurs sessions,
-                    vous pouvez simplement <strong>prendre des notes de votre côté.</strong> Ainsi si vous souhaitez
+                    vous pouvez simplement <strong>prendre des notes de votre côté.</strong></p>
+                <p class="classic-text">Puis si finalement vous souhaitez
                     travailler
                     avec moi vous
                     pourrez simplement <RouterLink to="/contact" class="classic-link">me les envoyer par e-mail</RouterLink>
-                    dans le format qui vous convient. <strong>Si vous faites tout en une
-                        session, pas la peine:</strong> vous pourrez m'envoyer votre document complété directement à la fin
-                    du
-                    formulaire.</p>
+                    dans le format qui vous convient.</p>
                 <p class="classic-text"><strong>Si vous rencontrez des difficultés, faites ce que vous pouvez et je vous
                         aiderai pour le reste !</strong> Rassurez-vous: c'est tout à fait normal si vous n'avez pas encore
                     toutes les
@@ -93,9 +91,6 @@ import GetReadySummaryComponent from '@/components/get-ready/GetReadySummaryComp
                         <div class="fsb-item"
                             :style="useGetReadyStore().formProgress > 1 ? { backgroundColor: '#E25E3E' } : { backgroundColor: 'transparent' }">
                         </div>
-                        <div class="fsb-item"
-                            :style="useGetReadyStore().formProgress > 2 ? { backgroundColor: '#E25E3E' } : { backgroundColor: 'transparent' }">
-                        </div>
                     </div>
                     <!-- next button -->
                     <ButtonParticle @click="useGetReadyStore().selectNextSection()" animation=''
@@ -112,7 +107,6 @@ import GetReadySummaryComponent from '@/components/get-ready/GetReadySummaryComp
                 <GetReadyStructureComponent
                     v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.STRUCTURE" />
                 <GetReadyDetailsComponent v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.DETAILS" />
-                <GetReadySummaryComponent v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.SUMMARY" />
             </div>
         </div>
     </section>

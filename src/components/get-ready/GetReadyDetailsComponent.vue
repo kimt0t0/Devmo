@@ -4,6 +4,7 @@ import { useLanguageStore } from '@/stores/language';
 import { useGetReadyStore } from '@/stores/getready';
 import { Language } from '@/enums/Language';
 import type { GetReadyDetailsInputs } from '@/interfaces/GetReadyDetailsInputs.interface';
+import { getReady } from '@/composables/getReady.composable';
 
 const userSavedInputs = useGetReadyStore().getReadySummary.details;
 const detailsInputs = reactive<GetReadyDetailsInputs>(userSavedInputs);
@@ -29,13 +30,12 @@ const removeSection = (pageIndex: number, sectionIndex: number): void => {
 const onSubmitDetails = (e: Event) => {
     e.preventDefault();
     useGetReadyStore().setUserDetailsInputs(detailsInputs);
-    useGetReadyStore().selectNextSection();
+    getReady().writeGetReady();
 }
 </script>
 
 <template>
     <div class="classic-section get-ready-form-section">
-        <p>{{ 'Détails : ' + JSON.stringify(detailsInputs) }}</p>
         <form class="get-ready-form" @submit="onSubmitDetails($event)">
             <!-- Title -->
             <SectionTitleParticle :title="useLanguageStore().language === Language.EN ? 'Details' : 'Détails'" />
