@@ -14,8 +14,21 @@ export const useGetReadyStore = defineStore('get-ready', () => {
     const selectedFormSection = ref<GetReadyFormSections>(GetReadyFormSections.GENERAL);
 
     // user inputs
-    const getReadySummary = reactive<any>({
-        general: {},
+    const getReadySummary = reactive<{
+        general: GetReadyGeneralInputs,
+        structure: GetReadyStructureInputs,
+        details: GetReadyDetailsInputs
+    }>({
+        general: {
+            summary: '',
+            visitors: '',
+            keyInformation: '',
+            atmosphere: '',
+            shapes: '',
+            colors: '',
+            inspirations: '',
+            inspirationsDetails: ''
+        },
         structure: {},
         details: {
             pagesList: [

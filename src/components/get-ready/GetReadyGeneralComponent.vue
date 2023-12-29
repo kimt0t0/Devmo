@@ -32,10 +32,10 @@ const onSubmitGeneral = (e: Event): void => {
             </InputGroupParticle>
 
             <!-- website / app visitors -->
-            <InputGroupParticle inputName="project-visitors"
+            <InputGroupParticle maxlength="155" inputName="project-visitors"
                 :label="useLanguageStore().language === Language.EN ? 'Who are your online targets ?' : 'Qui est votre public cible en ligne ?'">
-                <input type="text" class="ig-input get-ready-input" id="project-visitors" name="project-visitors"
-                    v-model="generalInputs.visitors" />
+                <textarea maxlength="255" class="ig-input get-ready-input __textarea" id="project-visitors"
+                    name="project-visitors" v-model="generalInputs.visitors" />
             </InputGroupParticle>
 
             <!-- key information -->
@@ -48,7 +48,7 @@ const onSubmitGeneral = (e: Event): void => {
             <!-- atmosphere -->
             <InputGroupParticle inputName="atmosphere"
                 :label="useLanguageStore().language === Language.EN ? 'Use 3 adjectives to describe the type of atmosphere you want on your app / website :' : 'Décrivez en 3 adjectifs le type d\'atmosphère que vous souhaitez voir sur votre site / application :'">
-                <input type="" class="ig-input get-ready-input" id="atmosphere" name="atmosphere"
+                <input type="text" class="ig-input get-ready-input" id="atmosphere" name="atmosphere"
                     v-model="generalInputs.atmosphere" />
             </InputGroupParticle>
 

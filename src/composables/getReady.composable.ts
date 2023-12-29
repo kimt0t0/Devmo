@@ -1,3 +1,4 @@
+import { ref } from 'vue';
 import { Language } from '@/enums/Language';
 import { useLanguageStore } from '@/stores/language';
 import { useGetReadyStore } from '@/stores/getready';
@@ -8,17 +9,38 @@ export function getReady() {
 
     // initialize document
     const getReadyDoc = new jsPDF();
+    const currentHeight = ref<number>(30);
 
-    // generate formatted creation date
+    // generate formatted text elements
+    // (date)
     const getFormatedDate = (): string => {
         getReadyDoc.setCreationDate(new Date());
         let date: string = getReadyDoc.getCreationDate('now').toString();
         let formattedDate: string = date.slice(8, 10) + '/' + date.slice(6, 8) + '/' + date.slice(2, 6);
         return formattedDate;
-    }
+    };
+    // (shapes)
+    const getShapeTextFr = (): string => {
+        switch (useGetReadyStore().getReadySummary.general.shapes) {
+            case 'round':
+                return 'arrondies'
+            case 'angular':
+                return 'angulaires'
+            default:
+                return 'variées ou autres'
+        }
+    };
+    const getShapeTextEn = (): string => {
+        switch (useGetReadyStore().getReadySummary.general.shapes) {
+            case 'round':
+                return 'rounded'
+            case 'angular':
+                return 'angular'
+            default:
+                return 'various or other types of'
+        }
+    };
 
-    // get data
-    const getReadySummaryData = useGetReadyStore().getReadySummary;
 
     // add fonts
     getReadyDoc.addFont("/assets/fonts/Lato-Regular.ttf", 'Lato', 'Lato');
@@ -59,6 +81,14 @@ export function getReady() {
         }
     }
 
+    // write text bloc
+    const writeTextBloc = (title: string, text: string, height: number): void => {
+        getReadyDoc.text(title.toUpperCase() + ' :', 20, currentHeight.value);
+        currentHeight.value += 7;
+        getReadyDoc.text(text, 20, currentHeight.value, { maxWidth: 180 });
+        currentHeight.value += height;
+    }
+
     // write and save document
     const writeGetReady = (): void => {
 
@@ -88,17 +118,62 @@ export function getReady() {
 
         // General
         // title
+        currentHeight.value += 30;
         setTextColor("dark");
         setTextSize("large");
-        getReadyDoc.text("Aspects généraux", 25, 60);
-        // contents
+        getReadyDoc.text("Aspects généraux", 20, currentHeight.value);
+        // summary
+        currentHeight.value += 15;
+        setTextSize("small");
+        writeTextBloc(
+            'Résumé',
+            useGetReadyStore().getReadySummary.general.summary,
+            25
+        );
+        // visitors
+        writeTextBloc(
+            'Description des visiteur.euse.s potentiel.le.s',
+            useGetReadyStore().getReadySummary.general.visitors,
+            30
+        );
+        // key information
+        writeTextBloc(
+            'Les informations clés du site',
+            useGetReadyStore().getReadySummary.general.keyInformation,
+            42
+        );
+        // atmosphere
+        writeTextBloc(
+            'Atmosphère recherchée',
+            useGetReadyStore().getReadySummary.general.atmosphere,
+            10
+        );
+        // shapes and colors
+        writeTextBloc(
+            'Style',
+            'Vous souhaitez des formes plutôt ' + getShapeTextFr() + ' et les couleurs suivantes: ' + useGetReadyStore().getReadySummary.general.colors,
+            10
+        );
+        // inspirations
+        writeTextBloc(
+            'Inspirations',
+            'Vous souhaitez vous inspirer des sites suivants: ' + useGetReadyStore().getReadySummary.general.inspirations + '.\n\nVos raisons sont les suivantes:' + useGetReadyStore().getReadySummary.general.inspirationsDetails,
+            40
+        );
 
         // Structure
         // title
+        getReadyDoc.addPage();
+        currentHeight.value = 30;
         setTextColor("dark");
         setTextSize("large");
-        getReadyDoc.text("La structure", 25, 160);
+        getReadyDoc.text("La structure", 25, currentHeight.value);
+        // users paths
+        // user accounts
+        // online sells
         // contents
+        // advanced
+        // admin pannel
 
         // Details
         getReadyDoc.addPage();
@@ -106,6 +181,7 @@ export function getReady() {
         setTextColor("dark");
         setTextSize("large");
         getReadyDoc.text("Les détails", 25, 30);
+        currentHeight.value = 30;
         // contents
 
         // Conclusion (use a setter)
