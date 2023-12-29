@@ -40,11 +40,90 @@ export function getReady() {
                 return 'various or other types of'
         }
     };
-
-
-    // add fonts
-    getReadyDoc.addFont("/assets/fonts/Lato-Regular.ttf", 'Lato', 'Lato');
-    getReadyDoc.addFont("/assets/fonts/Raleway-Medium.ttf", 'Raleway', 'Raleway');
+    // (user accounts)
+    const getUserAccountsTextFr = (): string => {
+        switch (useGetReadyStore().getReadySummary.structure.userAccounts) {
+            case true:
+                return 'oui';
+            case false:
+                return 'non';
+            default:
+                return 'indéterminé';
+        }
+    };
+    const getUserAccountsTextEn = (): string => {
+        switch (useGetReadyStore().getReadySummary.structure.userAccounts) {
+            case true:
+                return 'yes';
+            case false:
+                return 'no';
+            default:
+                return 'undecided';
+        }
+    };
+    // (online sells)
+    const getOnlineSellsTextFr = (): string => {
+        switch (useGetReadyStore().getReadySummary.structure.onlineSells) {
+            case true:
+                return 'oui';
+            case false:
+                return 'non';
+            default:
+                return 'indéterminé';
+        }
+    };
+    const getOnlineSellsTextEn = (): string => {
+        switch (useGetReadyStore().getReadySummary.structure.onlineSells) {
+            case true:
+                return 'yes';
+            case false:
+                return 'no';
+            default:
+                return 'undecided';
+        }
+    };
+    // (admin pannel)
+    const getAdminPannelTextFr = (): string => {
+        switch (useGetReadyStore().getReadySummary.structure.adminPannel) {
+            case true:
+                return 'oui';
+            case false:
+                return 'non';
+            default:
+                return 'indéterminé';
+        }
+    };
+    const getAdminPannelTextEn = (): string => {
+        switch (useGetReadyStore().getReadySummary.structure.adminPannel) {
+            case true:
+                return 'yes';
+            case false:
+                return 'no';
+            default:
+                return 'undecided';
+        }
+    };
+    // (advanced functions)
+    const getAdvancedTextFr = (): string => {
+        switch (useGetReadyStore().getReadySummary.structure.advanced) {
+            case true:
+                return 'oui';
+            case false:
+                return 'non';
+            default:
+                return 'indéterminé';
+        }
+    };
+    const getAdvancedTextEn = (): string => {
+        switch (useGetReadyStore().getReadySummary.structure.advanced) {
+            case true:
+                return 'yes';
+            case false:
+                return 'no';
+            default:
+                return 'undecided';
+        }
+    };
 
     // text styling methods
     const setTextColor = (color: 'dark' | 'neutral' | 'lighterNeutral'): void => {
@@ -119,12 +198,13 @@ export function getReady() {
         // General
         // title
         currentHeight.value += 30;
-        setTextColor("dark");
+        setTextColor("lighterNeutral");
         setTextSize("large");
         getReadyDoc.text("Aspects généraux", 20, currentHeight.value);
-        // summary
         currentHeight.value += 15;
+        setTextColor("dark");
         setTextSize("small");
+        // summary
         writeTextBloc(
             'Résumé',
             useGetReadyStore().getReadySummary.general.summary,
@@ -165,15 +245,36 @@ export function getReady() {
         // title
         getReadyDoc.addPage();
         currentHeight.value = 30;
-        setTextColor("dark");
+        setTextColor("neutral");
         setTextSize("large");
         getReadyDoc.text("La structure", 25, currentHeight.value);
+        currentHeight.value += 15;
+        setTextColor("dark");
+        setTextSize("small");
         // users paths
-        // user accounts
-        // online sells
-        // contents
-        // advanced
-        // admin pannel
+        writeTextBloc(
+            'Le(s) parcours utilisateur.ice prévu(s)',
+            useGetReadyStore().getReadySummary.structure.usersPaths,
+            35
+        );
+        // functionalities
+        writeTextBloc(
+            'Fonctionnalités spécifiques',
+            'Comptes utilisateur.ice.s: ' + getUserAccountsTextFr() + '.'
+            + '\nVentes en ligne: ' + getOnlineSellsTextFr() + '.'
+            + '\nPanneau d\'administration: ' + getAdminPannelTextFr() + '.'
+            + '\nVos types de contenus: ' + useGetReadyStore().getReadySummary.structure.contents
+            + '\nFonctionnalités avancées: ' + getAdvancedTextFr() + '.',
+            35
+        );
+        // advanced - details
+        if (useGetReadyStore().getReadySummary.structure.advancedDetails.length > 3) {
+            writeTextBloc(
+                'Détail des fonctionnalités avancées',
+                useGetReadyStore().getReadySummary.structure.advancedDetails,
+                35
+            );
+        }
 
         // Details
         getReadyDoc.addPage();
