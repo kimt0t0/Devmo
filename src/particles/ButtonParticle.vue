@@ -3,10 +3,7 @@ defineProps<{
     color?: string;
     size?: string;
     type?: 'button' | 'submit' | 'reset' | undefined,
-    animation?: {
-        type: 'animation' | '',
-        default: 'animation'
-    };
+    animation?: 'animation' | ''
 }>();
 </script>
 

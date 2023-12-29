@@ -84,6 +84,12 @@ const onSubmitDetails = (e: Event) => {
                                     :
                                     'Vous pouvez détailler ci-dessous les sections que à créer (titre obligatoire).'
                                 }}</p>
+                                <p class="get-ready-subsection-text">{{
+                                    useLanguageStore().language === Language.EN && index === 0 ?
+                                    'Each page must have at least one section.'
+                                    :
+                                    'Chaque page doit contenir une section au minimum.'
+                                }}</p>
 
                                 <ol class="sections-list">
                                     <li class="section-item" v-for="(section, sectionIndex) of page.sections"

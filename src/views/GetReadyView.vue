@@ -99,10 +99,8 @@ import GetReadyDetailsComponent from '@/components/get-ready/GetReadyDetailsComp
                     </ButtonParticle>
                 </div>
                 <!-- Form contents -->
-                <p :style="{ textAlign: 'center' }"><strong>Attention: Le contenu de ce formulaire est encore en
-                        construction.
-                        Il sera utilisable dans
-                        quelques jours !</strong></p>
+                <p :style="{ textAlign: 'center' }"><strong>Attention: le formulaire est désormais complet, mais la
+                        génération du PDF final est encore en cours de développement.</strong></p>
                 <GetReadyGeneralComponent v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.GENERAL" />
                 <GetReadyStructureComponent
                     v-if="useGetReadyStore().selectedFormSection === GetReadyFormSections.STRUCTURE" />
