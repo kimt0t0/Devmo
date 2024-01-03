@@ -1,5 +1,5 @@
 export interface GetReadyDetailsInputs {
-    pagesList?: {
+    pagesList: {
         title: string,
         summary?: string,
         sections: {
@@ -9,5 +9,5 @@ export interface GetReadyDetailsInputs {
             priority?: 1 | 2 | 3
         }[]
     }[],
-    header?: string
+    // add other fields here if necessary
 }

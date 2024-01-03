@@ -124,6 +124,31 @@ export function getReady() {
                 return 'undecided';
         }
     };
+    // (section's priority level)
+    const getPriorityTextFr = (priority: 1 | 2 | 3 | undefined): string => {
+        switch (priority) {
+            case 1:
+                return 'basse';
+            case 2:
+                return 'moyenne';
+            case 3:
+                return 'élevée';
+            default:
+                return 'non définie';
+        }
+    };
+    const getPriorityTextEn = (priority: 1 | 2 | 3 | undefined): string => {
+        switch (priority) {
+            case 1:
+                return 'low';
+            case 2:
+                return 'medium';
+            case 3:
+                return 'high';
+            default:
+                return 'undefined';
+        }
+    };
 
     // text styling methods
     const setTextColor = (color: 'dark' | 'neutral' | 'lighterNeutral'): void => {
@@ -161,11 +186,11 @@ export function getReady() {
     }
 
     // write text bloc
-    const writeTextBloc = (title: string, text: string, height: number): void => {
+    const writeTextBloc = (title: string, text?: string, height?: number): void => {
         getReadyDoc.text(title.toUpperCase() + ' :', 20, currentHeight.value);
         currentHeight.value += 7;
-        getReadyDoc.text(text, 20, currentHeight.value, { maxWidth: 180 });
-        currentHeight.value += height;
+        if (text) getReadyDoc.text(text, 20, currentHeight.value, { maxWidth: 180 });
+        if (height) currentHeight.value += height;
     }
 
     // write and save document
@@ -245,9 +270,9 @@ export function getReady() {
         // title
         getReadyDoc.addPage();
         currentHeight.value = 30;
-        setTextColor("neutral");
+        setTextColor("lighterNeutral");
         setTextSize("large");
-        getReadyDoc.text("La structure", 25, currentHeight.value);
+        getReadyDoc.text("Structure", 25, currentHeight.value);
         currentHeight.value += 15;
         setTextColor("dark");
         setTextSize("small");
@@ -268,7 +293,7 @@ export function getReady() {
             35
         );
         // advanced - details
-        if (useGetReadyStore().getReadySummary.structure.advancedDetails.length > 3) {
+        if (useGetReadyStore().getReadySummary.structure.advancedDetails && typeof useGetReadyStore().getReadySummary.structure.advancedDetails === 'string') {
             writeTextBloc(
                 'Détail des fonctionnalités avancées',
                 useGetReadyStore().getReadySummary.structure.advancedDetails,
@@ -279,11 +304,50 @@ export function getReady() {
         // Details
         getReadyDoc.addPage();
         // title
-        setTextColor("dark");
-        setTextSize("large");
-        getReadyDoc.text("Les détails", 25, 30);
         currentHeight.value = 30;
-        // contents
+        setTextColor("lighterNeutral");
+        setTextSize("large");
+        getReadyDoc.text("Détails", 25, currentHeight.value);
+        currentHeight.value += 15;
+        setTextColor("dark");
+        // pages
+        if (useGetReadyStore().getReadySummary.details.pagesList) {
+            for (let page of useGetReadyStore().getReadySummary.details.pagesList) {
+                setTextSize("medium");
+                currentHeight.value += 15;
+                getReadyDoc.text(page.title, 20, currentHeight.value);
+                currentHeight.value += 15;
+                setTextSize("small");
+                if (page.summary) {
+                    writeTextBloc(
+                        'Résumé',
+                        page.summary,
+                        30
+                    );
+                }
+                if (page.sections.length > 1) {
+                    for (let section of page.sections) {
+                        writeTextBloc(
+                            `Section - ${section.title}`,
+                            ' ',
+                            10
+                        );
+                        if (section.summary) {
+                            getReadyDoc.text(`Résumé: ${section.summary}`, 20, currentHeight.value, { maxWidth: 180 });
+                            currentHeight.value += 8;
+                        }
+                        if (section.contents) {
+                            getReadyDoc.text(`Contenus: ${section.contents}`, 20, currentHeight.value, { maxWidth: 180 });
+                            currentHeight.value += 8;
+                        }
+                        getReadyDoc.text(`Niveau de priorité: ${getPriorityTextFr(section.priority)}`, 20, currentHeight.value, { maxWidth: 180 });
+                        currentHeight.value += 18;
+                    }
+                }
+            }
+        } else {
+            getReadyDoc.text('Section non complétée.', 20, currentHeight.value);
+        }
 
         // Conclusion (use a setter)
         getReadyDoc.addPage();
@@ -292,6 +356,9 @@ export function getReady() {
         setTextSize("large");
         getReadyDoc.text("En conclusion", 25, 30);
         // contents
+        // writeTextBloc('Les spécialités que vous devriez rechercher', useGetReadyStore().conclusion.expertize, 20);
+        // writeTextBloc('Mes technologies :', useGetReadyStore().conclusion.expertize, 20); <- ajouter plutôt un lien ici dans le paragraphe
+
 
         // Footer
         setTextColor("neutral");
